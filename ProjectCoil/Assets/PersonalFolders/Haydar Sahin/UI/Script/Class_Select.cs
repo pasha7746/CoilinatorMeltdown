@@ -1,0 +1,36 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using JetBrains.Annotations;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Class_Select : MonoBehaviour
+{
+    public Button button;
+
+    public GameObject player;
+    public void OnEnable()
+    {
+        if (button != null)
+        {
+            button.onClick.AddListener(StorePlayer);
+        }
+    }
+
+    private void StorePlayer()
+    {
+        
+    }
+
+    // Use this for initialization
+    void Start ()
+    {
+		
+	}
+	
+	// Update is called once per frame
+	void Update ()
+    {
+		
+	}
+}
