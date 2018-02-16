@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// ignoring until Pasha is here
+/// </summary>
 public class Class_Select : MonoBehaviour
 {
     public Button button;

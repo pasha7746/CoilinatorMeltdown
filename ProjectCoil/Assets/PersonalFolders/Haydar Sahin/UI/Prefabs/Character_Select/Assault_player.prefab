@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222602519829412996}
   - component: {fileID: 114584713801034826}
   - component: {fileID: 114138541698358082}
+  - component: {fileID: 114143055959419390}
   m_Layer: 5
   m_Name: Assault_player
   m_TagString: Untagged
@@ -87,6 +88,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114143055959419390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1135297567487978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beac7b4a8eedb1644b9a51fa485a6712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextClass: {fileID: 0}
+  thisClass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!114 &114584713801034826
 MonoBehaviour:
   m_ObjectHideFlags: 1
