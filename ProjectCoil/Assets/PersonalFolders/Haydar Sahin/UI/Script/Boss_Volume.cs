@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Volume_Slider : MonoBehaviour {
+public class Boss_Volume : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
