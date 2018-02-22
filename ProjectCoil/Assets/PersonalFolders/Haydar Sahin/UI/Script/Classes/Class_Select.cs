@@ -9,8 +9,7 @@ using UnityEngine.UI;
 public class Class_Select : MonoBehaviour
 {
     public Button button;
-
-    public GameObject player;
+    
     public void OnEnable()
     {
         if (button != null)

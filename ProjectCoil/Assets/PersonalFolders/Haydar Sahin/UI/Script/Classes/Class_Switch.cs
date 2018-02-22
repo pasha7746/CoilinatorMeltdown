@@ -13,16 +13,15 @@ public class Class_Switch : MonoBehaviour
     public GameObject thisClass;
 
     public Button button;
-
     // Use this for initialization
     public virtual void OnEnable()
     {
-        if (OnClassSwitch != null)
-        {
-            OnClassSwitch();
-        }
         if (button != null)
         {
+            if (OnClassSwitch != null)
+            {
+                OnClassSwitch();
+            }
             button.onClick.AddListener(StartGame);
         }
     }
