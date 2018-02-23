@@ -15,8 +15,18 @@ public class MultiPlayer_Character_Select : MonoBehaviour
     public GameObject[] classImages;
     public void OnEnable()
     {
-        change.OnClassSwitch += PresentClassAdd;
-        change1.OnClassSwitch += PresentClassAdd;
+        switch (presentClass)
+        {
+            case 0:
+                change.OnClassSwitch += PresentClassAdd;
+                change1.OnClassSwitch -= PresentClassAdd;
+                break;
+            case 1:
+                change.OnClassSwitch -= PresentClassAdd;
+                change1.OnClassSwitch += PresentClassAdd;
+                break;
+        }
+
         if (button != null)
         {
             button.onClick.AddListener(StorePlayer);
@@ -26,10 +36,19 @@ public class MultiPlayer_Character_Select : MonoBehaviour
     private void PresentClassAdd()
     {
         presentClass++;
+        change.OnClassSwitch -= PresentClassAdd;
+        change1.OnClassSwitch += PresentClassAdd;
         if (presentClass >= Enum.GetNames(typeof(CharacterClasses.Classes)).Length)
         {
             presentClass = 0;
+            change.OnClassSwitch += PresentClassAdd;
+            change1.OnClassSwitch -= PresentClassAdd;
         }
+    }
+
+    private void Update()
+    {
+        throw new System.NotImplementedException();
     }
 
     private void StorePlayer()
@@ -75,7 +94,7 @@ public class MultiPlayer_Character_Select : MonoBehaviour
 
     private void OnDisable()
     {
-        change.OnClassSwitch -= StorePlayer;
-        change1.OnClassSwitch -= StorePlayer;
+        change.OnClassSwitch -= PresentClassAdd;
+        change1.OnClassSwitch -= PresentClassAdd;
     }
 }
