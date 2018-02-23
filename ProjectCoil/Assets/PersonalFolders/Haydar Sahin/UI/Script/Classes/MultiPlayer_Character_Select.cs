@@ -12,6 +12,7 @@ public class MultiPlayer_Character_Select : MonoBehaviour
     public GameObject thisButton;
     public int presentClass = 0;
     public int playerNumber = 1;
+    public GameObject[] classImages;
     public void OnEnable()
     {
         change.OnClassSwitch += PresentClassAdd;
@@ -56,6 +57,17 @@ public class MultiPlayer_Character_Select : MonoBehaviour
     {
         if (ready != null && thisButton != null)
         {
+            switch (presentClass)
+            {
+                case 0:
+                    classImages[0].SetActive(true);
+                    change.gameObject.SetActive(false);
+                    break;
+                case 1:
+                    classImages[1].SetActive(true);
+                    change1.gameObject.SetActive(false);
+                    break;
+            }
             ready.SetActive(true);
             thisButton.SetActive(false);
         }

@@ -18,10 +18,6 @@ public class Class_Switch : MonoBehaviour
     {
         if (button != null)
         {
-            if (OnClassSwitch != null)
-            {
-                OnClassSwitch();
-            }
             button.onClick.AddListener(StartGame);
         }
     }
@@ -30,6 +26,10 @@ public class Class_Switch : MonoBehaviour
     {
         if (nextClass != null && thisClass != null)
         {
+            if (OnClassSwitch != null)
+            {
+                OnClassSwitch();
+            }
             nextClass.SetActive(true);
             thisClass.SetActive(false);
         }
