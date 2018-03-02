@@ -11,9 +11,9 @@ public class Volume_Manager : MonoBehaviour
         Music
     }
 
-    private float masterVolume = 1.0f;
-    private float sfxVolume = 1.0f;
-    private float MusicVolume = 1.0f;
+    public float masterVolume { get; private set; }
+    public float sfxVolume { get; private set; }
+    public float MusicVolume { get; private set; }
 
     private AudioSource[] musicSound;
     private int currentMusicIndex = 0;
@@ -45,9 +45,9 @@ public class Volume_Manager : MonoBehaviour
                 sfxVolume = volume;
                 break;
         }
-        PlayerPrefs.SetFloat("master_vol", masterVolume);
-        PlayerPrefs.SetFloat("music_vol", MusicVolume);
-        PlayerPrefs.SetFloat("sfx_vol", sfxVolume);
+        PlayerPrefs.SetFloat("master_vol", 1);
+        PlayerPrefs.SetFloat("music_vol", 1);
+        PlayerPrefs.SetFloat("sfx_vol", 1);
     }
 
     public void PlayMusic(AudioClip musicClip, float fadeLength = 1)
