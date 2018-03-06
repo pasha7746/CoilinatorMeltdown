@@ -45,11 +45,7 @@ public class MultiPlayer_Character_Select : MonoBehaviour
             change1.OnClassSwitch -= PresentClassAdd;
         }
     }
-
-    private void Update()
-    {
-        throw new System.NotImplementedException();
-    }
+    
 
     private void StorePlayer()
     {
