@@ -10,29 +10,29 @@ public class ToggleScript : MonoBehaviour
     public event Action OnToggledOff;
 	public Toggle myToggle;
 	public Slider mySlider;
+    public bool doseSliderChange;
 	// Use this for initialization
-	void OnEnabled ()
-	{
-	}
-	
-	// Update is called once per frame
-	public void Update ()
-	{
-		if (myToggle.isOn)
-		{
-			mySlider.value = 1;
+	public void OnEnabled ()
+    {
+    }
+
+    private void Update()
+    {
+        if (myToggle.isOn)
+        {
+            mySlider.value = 1;
             if (OnToggledOn != null)
             {
                 OnToggledOn();
             }
-		}
-		else
-		{
-			mySlider.value = 0;
+        }
+        else
+        {
+            mySlider.value = 0;
             if (OnToggledOff != null)
             {
                 OnToggledOff();
             }
         }
-	}
+    }
 }

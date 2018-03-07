@@ -35,10 +35,24 @@ public class VRUIInput : MonoBehaviour
 
     private void HandlePointerIn(object sender, PointerEventArgs e)
     {
-        var button = e.target.GetComponent<Button>();
+        Button button = e.target.GetComponent<Button>();
         if (button != null)
         {
             button.Select();
+            Debug.Log("HandlePointerIn", e.target.gameObject);
+        }
+
+        Toggle toggle = e.target.GetComponent<Toggle>();
+        if (toggle != null)
+        {
+            toggle.Select();
+            Debug.Log("HandlePointerIn", e.target.gameObject);
+        }
+
+        Slider slider = e.target.GetComponent<Slider>();
+        if (slider != null)
+        {
+            slider.Select();
             Debug.Log("HandlePointerIn", e.target.gameObject);
         }
     }
@@ -48,6 +62,18 @@ public class VRUIInput : MonoBehaviour
 
         var button = e.target.GetComponent<Button>();
         if (button != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            Debug.Log("HandlePointerOut", e.target.gameObject);
+        }
+        var toggle = e.target.GetComponent<Toggle>();
+        if (toggle != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            Debug.Log("HandlePointerOut", e.target.gameObject);
+        }
+        Slider slider = e.target.GetComponent<Slider>();
+        if (slider != null)
         {
             EventSystem.current.SetSelectedGameObject(null);
             Debug.Log("HandlePointerOut", e.target.gameObject);
