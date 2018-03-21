@@ -18,6 +18,10 @@ public class SelectMenu : MonoBehaviour
         {
             button.onClick.AddListener(StartGame);
         }
+        else
+        {
+            Debug.Log("There is no button. Please button me up");
+        }
 	}
 
     public void StartGame()
@@ -26,6 +30,15 @@ public class SelectMenu : MonoBehaviour
         {
             nextMenu.SetActive(true);
             thisMenu.SetActive(false);
+        }
+
+        if (nextMenu == null)
+        {
+            Debug.Log("Who's next?");
+        }
+        if (thisMenu == null)
+        {
+            Debug.Log("Where am I?");
         }
         //SceneManager.LoadScene(1);
     }

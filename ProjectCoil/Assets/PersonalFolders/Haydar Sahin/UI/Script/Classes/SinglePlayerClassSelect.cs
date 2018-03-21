@@ -6,28 +6,52 @@ using UnityEngine.UI;
 
 public class SinglePlayerClassSelect : MonoBehaviour
 {
-    public Class_Switch change;
-    public Class_Switch change1;
+    
+    public Class_Switch[] changes;
     public Button button;
     public GameObject nextMenu;
     public GameObject thisMenu;
     public int presentClass = 0;
     public void OnEnable()
     {
-        change.OnClassSwitch += PresentClassAdd;
-        change1.OnClassSwitch += PresentClassAdd;
+        if (changes != null)
+        {
+            switch (presentClass)
+            {
+                case 0:
+                    changes[0].OnClassSwitch += PresentClassAdd;
+                    changes[1].OnClassSwitch -= PresentClassAdd;
+                    break;
+                case 1:
+                    changes[0].OnClassSwitch -= PresentClassAdd;
+                    changes[1].OnClassSwitch += PresentClassAdd;
+                    break;
+            }
+        }
+        else
+        {
+            Debug.Log("What things am I changing though?");
+        }
         if (button != null)
         {
             button.onClick.AddListener(StorePlayer);
+        }
+        else
+        {
+            Debug.Log("There is no button. Please button me up");
         }
     }
 
     private void PresentClassAdd()
     {
         presentClass++;
+        changes[0].OnClassSwitch -= PresentClassAdd;
+        changes[1].OnClassSwitch += PresentClassAdd;
         if (presentClass >= Enum.GetNames(typeof(CharacterClasses.Classes)).Length)
         {
             presentClass = 0;
+            changes[0].OnClassSwitch += PresentClassAdd;
+            changes[1].OnClassSwitch -= PresentClassAdd;
         }
     }
 
@@ -50,11 +74,27 @@ public class SinglePlayerClassSelect : MonoBehaviour
             nextMenu.SetActive(true);
             thisMenu.SetActive(false);
         }
+
+        if (nextMenu == null)
+        {
+            Debug.Log("Who's next?");
+        }
+        if (thisMenu == null)
+        {
+            Debug.Log("Where am I?");
+        }
     }
 
     private void OnDisable()
     {
-        change.OnClassSwitch -= StorePlayer;
-        change1.OnClassSwitch -= StorePlayer;
+        if (changes != null)
+        {
+            changes[0].OnClassSwitch -= StorePlayer;
+            changes[1].OnClassSwitch -= StorePlayer;
+        }
+        else
+        {
+            Debug.Log("What things am I changing though?");
+        }
     }
 }

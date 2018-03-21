@@ -16,6 +16,11 @@ public class LevelSelect : MonoBehaviour
         {
             button.onClick.AddListener(StartGame);
         }
+
+        else
+        {
+            Debug.Log("There is no button. Please button me up");
+        }
     }
 
     void StartGame()
@@ -23,6 +28,10 @@ public class LevelSelect : MonoBehaviour
         if (levelName != null || levelName != " ")
         {
             SceneManager.LoadScene(levelName);
+        }
+        else
+        {
+            Debug.Log("What Level?");
         }
     }
 }

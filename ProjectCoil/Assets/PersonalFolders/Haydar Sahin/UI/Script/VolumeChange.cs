@@ -11,19 +11,30 @@ public class VolumeChange : MonoBehaviour
 
     [SerializeField] private float volumeAmount;
     // Use this for initialization
-    public virtual void OnEnable()
+    public void OnEnable()
     {
         button = this.GetComponent<Button>();
         if (button != null)
         {
             button.onClick.AddListener(VolumeSliderChanger);
         }
+        else
+        {
+            Debug.Log("There is no button. Please button me up");
+        }
     }
 
     private void VolumeSliderChanger()
     {
-        volumeSlider.value += volumeAmount;
-        CheckVolume();
+        if (volumeSlider != null)
+        {
+            volumeSlider.value += volumeAmount;
+            CheckVolume();
+        }
+        else
+        {
+            Debug.Log("Was there supposed to be sound. Sorry I forgot to slide it up");
+        }
     }
 
     private void CheckVolume()

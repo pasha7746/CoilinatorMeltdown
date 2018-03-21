@@ -19,10 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224201881651855982}
+  - component: {fileID: 114517926568436862}
   - component: {fileID: 222516222024338108}
   - component: {fileID: 114686934094895692}
   - component: {fileID: 114483563299499630}
   - component: {fileID: 114268780361438710}
+  - component: {fileID: 65561129210255424}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -116,6 +118,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &65561129210255424
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105059832601054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160, y: 30, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114164594391750114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,6 +260,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114517926568436862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105059832601054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08986413770457419ad6914ab42b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114686934094895692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,7 +423,7 @@ Canvas:
   m_GameObject: {fileID: 1249677204413546}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -493,7 +518,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249677204413546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 465, y: 116.5, z: 0}
+  m_LocalPosition: {x: 465, y: 116.5, z: 157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224092252029992326}
@@ -503,7 +528,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 465, y: 116.5}
-  m_SizeDelta: {x: 930, y: 233}
+  m_SizeDelta: {x: 930, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224977253706779816
 RectTransform:

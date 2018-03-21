@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/// <summary>
-/// ignoring until Pasha is here
-/// </summary>
 public class Class_Switch : MonoBehaviour
 {
     public event Action OnClassSwitch;
@@ -20,6 +17,10 @@ public class Class_Switch : MonoBehaviour
         {
             button.onClick.AddListener(StartGame);
         }
+        else
+        {
+            Debug.Log("There is no button. Please button me up");
+        }
     }
 
     public void StartGame()
@@ -32,6 +33,15 @@ public class Class_Switch : MonoBehaviour
             }
             nextClass.SetActive(true);
             thisClass.SetActive(false);
+        }
+
+        if (nextClass == null)
+        {
+            Debug.Log("Who's next?");
+        }
+        if (thisClass == null)
+        {
+            Debug.Log("Where am I?");
         }
         //SceneManager.LoadScene(1);
     }

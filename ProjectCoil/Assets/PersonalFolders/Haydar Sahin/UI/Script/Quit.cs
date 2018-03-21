@@ -12,6 +12,11 @@ public class Quit : MonoBehaviour
         {
             button.onClick.AddListener(QuitGame);
         }
+
+        else
+        {
+            Debug.Log("There is no button. Please button me up");
+        }
     }
 
     private void QuitGame()
