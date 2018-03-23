@@ -8,12 +8,13 @@ public class SinglePlayerClassSelect : MonoBehaviour
 {
     
     public Class_Switch[] changes;
-    public Button button;
+    private Button button;
     public GameObject nextMenu;
     public GameObject thisMenu;
     public int presentClass = 0;
     public void OnEnable()
     {
+        button = this.GetComponent<Button>();
         if (changes != null)
         {
             switch (presentClass)
@@ -35,10 +36,6 @@ public class SinglePlayerClassSelect : MonoBehaviour
         if (button != null)
         {
             button.onClick.AddListener(StorePlayer);
-        }
-        else
-        {
-            Debug.Log("There is no button. Please button me up");
         }
     }
 

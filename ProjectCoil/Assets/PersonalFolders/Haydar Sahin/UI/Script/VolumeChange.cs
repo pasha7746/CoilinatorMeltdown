@@ -18,10 +18,6 @@ public class VolumeChange : MonoBehaviour
         {
             button.onClick.AddListener(VolumeSliderChanger);
         }
-        else
-        {
-            Debug.Log("There is no button. Please button me up");
-        }
     }
 
     private void VolumeSliderChanger()

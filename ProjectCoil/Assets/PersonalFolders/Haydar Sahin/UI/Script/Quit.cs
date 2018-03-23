@@ -5,17 +5,13 @@ using UnityEngine.UI;
 
 public class Quit : MonoBehaviour
 {
-    public Button button;
+    private Button button;
     private void OnEnable()
     {
+        button = this.GetComponent<Button>();
         if (button != null)
         {
             button.onClick.AddListener(QuitGame);
-        }
-
-        else
-        {
-            Debug.Log("There is no button. Please button me up");
         }
     }
 

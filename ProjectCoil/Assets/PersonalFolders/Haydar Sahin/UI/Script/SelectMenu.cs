@@ -9,18 +9,15 @@ public class SelectMenu : MonoBehaviour
     public GameObject nextMenu;
     public GameObject thisMenu;
 
-    public Button button;
+    private Button button;
 
 	// Use this for initialization
 	public virtual void OnEnable()
     {
+        button = this.GetComponent<Button>();
         if (button != null)
         {
             button.onClick.AddListener(StartGame);
-        }
-        else
-        {
-            Debug.Log("There is no button. Please button me up");
         }
 	}
 

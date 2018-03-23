@@ -7,7 +7,7 @@ public class MultiPlayer_Character_Select : MonoBehaviour
 {
     public Class_Switch change;
     public Class_Switch change1;
-    public Button button;
+    private Button button;
     public GameObject ready;
     public GameObject thisButton;
     public int presentClass = 0;
@@ -15,6 +15,7 @@ public class MultiPlayer_Character_Select : MonoBehaviour
     public GameObject[] classImages;
     public void OnEnable()
     {
+        button = this.GetComponent<Button>();
         switch (presentClass)
         {
             case 0:
