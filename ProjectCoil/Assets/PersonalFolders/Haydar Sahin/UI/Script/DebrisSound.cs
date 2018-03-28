@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class DebrisSound : MonoBehaviour
 {
-    public GameObject sound1;
+    #region auto
+    public GameObject[] sounds;
+    #endregion
+    #region manual
+    /*public GameObject sound1;
     public GameObject sound2;
     public GameObject sound3;
     public GameObject sound4;
@@ -13,14 +17,18 @@ public class DebrisSound : MonoBehaviour
     public GameObject sound7;
     public GameObject sound8;
     public GameObject sound9;
-    public GameObject sound10;
+    public GameObject sound10;*/
+    #endregion
     public bool hasImpacted = false;
     public float timer = 0.0f;
     public float minSoundTimer = 0.0f;
     public float maxSoundTimer = 1.0f;
     public float soundTimer1, soundTimer2, soundTimer3, soundTimer4;
     protected bool havePlayed = false;
-    protected int playedAmount = 0;
+    protected bool soundPlayed1 = false;
+    protected bool soundPlayed2 = false;
+    protected bool soundPlayed3 = false;
+    protected bool soundPlayed4 = false;
     protected GameObject mySelf;
     private Coroutine timerCoroutine;
 
@@ -32,7 +40,13 @@ public class DebrisSound : MonoBehaviour
         soundTimer2 = Random.Range(minSoundTimer, maxSoundTimer);
         soundTimer3 = Random.Range(minSoundTimer, maxSoundTimer);
         soundTimer4 = Random.Range(minSoundTimer, maxSoundTimer);
+        soundPlayed1 = soundPlayed2 = soundPlayed3 = soundPlayed4 = false;
         timer = 0.0f;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Timer();
     }
 
     public void Timer()
@@ -42,14 +56,37 @@ public class DebrisSound : MonoBehaviour
 
     public IEnumerator TimerRoutine()
     {
-        while (true)
+        while (hasImpacted == false)
         {
             timer += Time.deltaTime;
-            if (timer == soundTimer1 || timer == soundTimer2 || timer == soundTimer3 || timer == soundTimer4)
+            if ((timer >= soundTimer1 && soundPlayed1 == false)||
+                (timer >= soundTimer2 && soundPlayed2 == false)||
+                (timer >= soundTimer3 && soundPlayed3 == false)||
+                (timer >= soundTimer4 && soundPlayed4 == false))
             {
+                if (timer > soundTimer1)
+                {
+                    soundPlayed1 = true;
+                }
+                if (timer > soundTimer2)
+                {
+                    soundPlayed2 = true;
+                }
+                if (timer > soundTimer3)
+                {
+                    soundPlayed3 = true;
+                }
+                if (timer > soundTimer4)
+                {
+                    soundPlayed4 = true;
+                }
                 Impact();
             }
-                yield return null;
+
+            if (timer > soundTimer1 && timer > soundTimer2 && timer > soundTimer3 && timer > soundTimer4)
+            {
+                hasImpacted = true;
+            }
         }
 
         yield return null;
@@ -57,79 +94,15 @@ public class DebrisSound : MonoBehaviour
 
     protected void Impact()
     {
-        int picker = Random.Range(0, 28);
-        switch (picker)
-        {
-            case 0:
-            case 10:
-            case 20:
-                sound1.SetActive(true);
-                playedAmount++;
-                break;
-            case 1:
-            case 11:
-            case 21:
-                sound2.SetActive(true);
-                playedAmount++;
-                break;
-            case 2:
-            case 12:
-            case 22:
-                sound3.SetActive(true);
-                playedAmount++;
-                break;
-            case 3:
-            case 13:
-            case 23:
-                sound4.SetActive(true);
-                playedAmount++;
-                break;
-            case 4:
-            case 14:
-            case 24:
-                sound5.SetActive(true);
-                playedAmount++;
-                break;
-            case 5:
-            case 15:
-            case 25:
-                sound6.SetActive(true);
-                playedAmount++;
-                break;
-            case 6:
-            case 16:
-            case 26:
-                sound7.SetActive(true);
-                playedAmount++;
-                break;
-            case 7:
-            case 17:
-            case 27:
-                sound8.SetActive(true);
-                playedAmount++;
-                break;
-            case 8:
-            case 18:
-            case 28:
-                sound9.SetActive(true);
-                playedAmount++;
-                break;
-            case 9:
-            case 19:
-            default:
-                if (sound10 != null)
-                {
-                    sound10.SetActive(true);
-                    playedAmount++;
-                    break;
-                }
-                else
-                {
-                    sound9.SetActive(true);
-                    playedAmount++;
-                    break;
-                }
-        }
+        int picker = Random.Range(0, sounds.Length - 1);
+        #region picker Auto type test
+        sounds[picker].SetActive(true);
+        #endregion
+    }
+
+    private void SetCase()
+    {
+        
     }
 
     public virtual void OnDisable()
