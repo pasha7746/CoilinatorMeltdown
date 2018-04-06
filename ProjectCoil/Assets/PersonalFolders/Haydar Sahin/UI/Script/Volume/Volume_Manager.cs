@@ -76,6 +76,8 @@ public class Volume_Manager : MonoBehaviour
             currentMusicIndex = 1 - currentMusicIndex;
             musicSound[currentMusicIndex].clip = musicClip;
             musicSound[currentMusicIndex].Play();
+            musicSound[currentMusicIndex].loop = true;
+            musicSound[1 - currentMusicIndex].loop = false;
 
             StartCoroutine(CrossFadeMusic(fadeLength));
         }
