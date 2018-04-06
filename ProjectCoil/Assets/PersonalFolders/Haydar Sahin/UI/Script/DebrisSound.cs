@@ -5,7 +5,7 @@ using UnityEngine;
 public class DebrisSound : MonoBehaviour
 {
     #region auto
-    public GameObject[] sounds;
+    public AudioClip[] audioSounds;
     #endregion
     #region manual
     /*public GameObject sound1;
@@ -43,12 +43,14 @@ public class DebrisSound : MonoBehaviour
         soundPlayed1 = soundPlayed2 = soundPlayed3 = soundPlayed4 = false;
         timer = 0.0f;
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        Timer();
-    }
-
+    //test
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    Timer();
+    //}
+    /// <summary>
+    /// call for random sound
+    /// </summary>
     public void Timer()
     {
         timerCoroutine = StartCoroutine(TimerRoutine());
@@ -59,27 +61,25 @@ public class DebrisSound : MonoBehaviour
         while (hasImpacted == false)
         {
             timer += Time.deltaTime;
-            if ((timer >= soundTimer1 && soundPlayed1 == false)||
-                (timer >= soundTimer2 && soundPlayed2 == false)||
-                (timer >= soundTimer3 && soundPlayed3 == false)||
-                (timer >= soundTimer4 && soundPlayed4 == false))
+            
+            if (timer >= soundTimer1 && soundPlayed1 == false)
             {
-                if (timer > soundTimer1)
-                {
-                    soundPlayed1 = true;
-                }
-                if (timer > soundTimer2)
-                {
-                    soundPlayed2 = true;
-                }
-                if (timer > soundTimer3)
-                {
-                    soundPlayed3 = true;
-                }
-                if (timer > soundTimer4)
-                {
-                    soundPlayed4 = true;
-                }
+                soundPlayed1 = true;
+                Impact();
+            }
+            if (timer >= soundTimer2 && soundPlayed2 == false)
+            {
+                soundPlayed2 = true;
+                Impact();
+            }
+            if (timer >= soundTimer3 && soundPlayed3 == false)
+            {
+                soundPlayed3 = true;
+                Impact();
+            }
+            if (timer >= soundTimer4 && soundPlayed4 == false)
+            {
+                soundPlayed4 = true;
                 Impact();
             }
 
@@ -94,15 +94,12 @@ public class DebrisSound : MonoBehaviour
 
     protected void Impact()
     {
-        int picker = Random.Range(0, sounds.Length - 1);
+        int picker = Random.Range(0, audioSounds.Length - 1);
         #region picker Auto type test
-        sounds[picker].SetActive(true);
+        print(picker);
+        Volume_Manager.volumeBoss.PlaySfx(audioSounds[picker], transform.position);
+        //sounds[picker].SetActive(true);
         #endregion
-    }
-
-    private void SetCase()
-    {
-        
     }
 
     public virtual void OnDisable()

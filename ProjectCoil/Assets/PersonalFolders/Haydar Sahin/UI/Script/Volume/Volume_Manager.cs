@@ -14,20 +14,34 @@ public class Volume_Manager : MonoBehaviour
     public float masterVolume { get; private set; }
     public float sfxVolume { get; private set; }
     public float MusicVolume { get; private set; }
-
+    private AudioSource sfx2DSource;
     private AudioSource[] musicSound;
     private int currentMusicIndex = 0;
 
     public static Volume_Manager volumeBoss;
     private void Awake()
     {
-        volumeBoss = this;
-        musicSound = new AudioSource[2];
-        for (int i = 0; i < 2; i++)
+        if (volumeBoss != null)
         {
-            GameObject newMusic = new GameObject("Music" + i);
-            musicSound[i] = newMusic.AddComponent<AudioSource>();
-            newMusic.transform.parent = transform;
+            Destroy(gameObject);
+        }
+        else
+        {
+            volumeBoss = this;
+            musicSound = new AudioSource[2];
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject newMusic = new GameObject("Music" + i);
+                musicSound[i] = newMusic.AddComponent<AudioSource>();
+                newMusic.transform.parent = transform;
+            }
+            GameObject newsfx2DSource = new GameObject("2D_Sfx");
+            sfx2DSource = newsfx2DSource.AddComponent<AudioSource>();
+            newsfx2DSource.transform.parent = transform;
+
+            masterVolume = PlayerPrefs.GetFloat("master_vol", masterVolume);
+            MusicVolume = PlayerPrefs.GetFloat("music_vol", sfxVolume);
+            sfxVolume = PlayerPrefs.GetFloat("sfx_vol", MusicVolume);
         }
     }
 
@@ -45,9 +59,14 @@ public class Volume_Manager : MonoBehaviour
                 sfxVolume = volume;
                 break;
         }
-        PlayerPrefs.SetFloat("master_vol", 1);
-        PlayerPrefs.SetFloat("music_vol", 1);
-        PlayerPrefs.SetFloat("sfx_vol", 1);
+
+        musicSound[0].volume = MusicVolume * masterVolume;
+        musicSound[1].volume = MusicVolume * masterVolume;
+        
+        PlayerPrefs.SetFloat("master_vol", masterVolume);
+        PlayerPrefs.SetFloat("music_vol", MusicVolume);
+        PlayerPrefs.SetFloat("sfx_vol", sfxVolume);
+        PlayerPrefs.Save();
     }
 
     public void PlayMusic(AudioClip musicClip, float fadeLength = 1)
@@ -79,6 +98,13 @@ public class Volume_Manager : MonoBehaviour
         if (sfxClip != null)
         {
             AudioSource.PlayClipAtPoint(sfxClip, location, sfxVolume * masterVolume);
+        }
+    }
+    public void Play2DSfx(AudioClip sfxClip)
+    {
+        if (sfxClip != null)
+        {
+            sfx2DSource.PlayOneShot(sfxClip, sfxVolume * masterVolume);
         }
     }
 }
