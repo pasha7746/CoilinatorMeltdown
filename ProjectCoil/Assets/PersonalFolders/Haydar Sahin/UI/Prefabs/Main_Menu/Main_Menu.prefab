@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1310747167077766
 GameObject:
   m_ObjectHideFlags: 1
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf492b29957b1274b8bc8d45ff059b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 114086434202796390}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114224161909355930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d15cec6d0ef44e4f82574d9abead01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 114153676366403032}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   levelName: 
 --- !u!114 &114297121629802132
 MonoBehaviour:
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1280103755403462}
-  button: {fileID: 114939452106985354}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114628323092927150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1280103755403462}
-  button: {fileID: 114669193812852088}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114977446223502150
 MonoBehaviour:
   m_ObjectHideFlags: 1

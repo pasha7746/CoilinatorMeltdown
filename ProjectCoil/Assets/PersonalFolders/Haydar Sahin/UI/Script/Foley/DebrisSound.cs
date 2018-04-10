@@ -61,7 +61,6 @@ public class DebrisSound : MonoBehaviour
         while (hasImpacted == false)
         {
             timer += Time.deltaTime;
-            
             if (timer >= soundTimer1 && soundPlayed1 == false)
             {
                 soundPlayed1 = true;

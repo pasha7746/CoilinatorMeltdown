@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d15cec6d0ef44e4f82574d9abead01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  sound: {fileID: 0}
   levelName: 
 --- !u!114 &114263472567385404
 MonoBehaviour:
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1417371926751800}
-  button: {fileID: 114699396212562718}
+  sound: {fileID: 0}
 --- !u!114 &114616531799187768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d15cec6d0ef44e4f82574d9abead01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 114645476874723714}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   levelName: 
 --- !u!222 &222185783359579176
 CanvasRenderer:

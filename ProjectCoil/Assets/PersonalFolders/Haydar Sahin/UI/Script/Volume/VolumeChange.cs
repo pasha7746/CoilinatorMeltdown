@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class VolumeChange : MonoBehaviour
 {
     public Slider volumeSlider;
-    
+    public AudioClip sound;
     private Button button;
 
     [SerializeField] private float volumeAmount;
@@ -22,6 +22,7 @@ public class VolumeChange : MonoBehaviour
 
     private void VolumeSliderChanger()
     {
+        Volume_Manager.volumeBoss.Play2DSfx(sound);
         if (volumeSlider != null)
         {
             volumeSlider.value += volumeAmount;

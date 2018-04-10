@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LevelSelect : MonoBehaviour
 {
     private Button button;
-
+    public AudioClip sound;
     public string levelName;
     // Use this for initialization
     void OnEnable()
@@ -22,6 +22,7 @@ public class LevelSelect : MonoBehaviour
 
     void StartGame()
     {
+        Volume_Manager.volumeBoss.Play2DSfx(sound);
         if (levelName != null || levelName != " ")
         {
             SceneManager.LoadScene(levelName);

@@ -8,7 +8,7 @@ public class SelectMenu : MonoBehaviour
 {
     public GameObject nextMenu;
     public GameObject thisMenu;
-
+    public AudioClip sound;
     private Button button;
 
 	// Use this for initialization
@@ -23,6 +23,7 @@ public class SelectMenu : MonoBehaviour
 
     public void StartGame()
     {
+        Volume_Manager.volumeBoss.Play2DSfx(sound);
         if (nextMenu != null && thisMenu != null)
         {
             nextMenu.SetActive(true);

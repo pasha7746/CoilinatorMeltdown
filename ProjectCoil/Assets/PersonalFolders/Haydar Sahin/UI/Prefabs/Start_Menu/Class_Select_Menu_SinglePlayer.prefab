@@ -169,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1485035371838634
 GameObject:
   m_ObjectHideFlags: 1
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextClass: {fileID: 1565470929819088}
   thisClass: {fileID: 1221146219226692}
-  button: {fileID: 114109189169542598}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114011488663253044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,10 +415,10 @@ MonoBehaviour:
   changes:
   - {fileID: 114007409627031268}
   - {fileID: 114172769174684004}
-  button: {fileID: 114795222436853830}
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1342087841443650}
   presentClass: 0
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114064906211502684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextClass: {fileID: 1221146219226692}
   thisClass: {fileID: 1565470929819088}
-  button: {fileID: 114681612571741840}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114249520648989900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1342087841443650}
-  button: {fileID: 114595751470355106}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114662029567424160
 MonoBehaviour:
   m_ObjectHideFlags: 1

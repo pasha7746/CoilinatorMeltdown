@@ -8,7 +8,7 @@ public class Class_Switch : MonoBehaviour
     public event Action OnClassSwitch;
     public GameObject nextClass;
     public GameObject thisClass;
-
+    public AudioClip sound;
     private Button button;
     // Use this for initialization
     public virtual void OnEnable()
@@ -22,6 +22,7 @@ public class Class_Switch : MonoBehaviour
 
     public void StartGame()
     {
+        Volume_Manager.volumeBoss.Play2DSfx(sound);
         if (nextClass != null && thisClass != null)
         {
             if (OnClassSwitch != null)

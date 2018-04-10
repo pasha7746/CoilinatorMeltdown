@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 114260075939201960}
   - component: {fileID: 114087589284274510}
   - component: {fileID: 65995829386377510}
+  - component: {fileID: 114173851437975944}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -358,6 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1654100793975412}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114151532044262278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +392,21 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114173851437975944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476935331001328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def18100167c2c74eb9340ec95a0a9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisMenu: {fileID: 1654100793975412}
+  buttonClick: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
+  resumeSound: {fileID: 8300000, guid: 7c80287e663fe004f8a3dd3ba4ffd1ec, type: 3}
+  button: {fileID: 114087589284274510}
 --- !u!114 &114223579258244232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,6 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d15cec6d0ef44e4f82574d9abead01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   levelName: 
 --- !u!114 &114754315815527728
 MonoBehaviour:

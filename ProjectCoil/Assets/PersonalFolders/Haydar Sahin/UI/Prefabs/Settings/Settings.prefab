@@ -300,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1378071457012586
 GameObject:
   m_ObjectHideFlags: 1
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1192,6 +1192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114608181022290202}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   volumeAmount: -0.05
 --- !u!114 &114350939155574142
 MonoBehaviour:
@@ -1382,6 +1383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114505473342054218}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   volumeAmount: 0.05
 --- !u!114 &114450495538746940
 MonoBehaviour:
@@ -1706,7 +1708,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1735,6 +1737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114608181022290202}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   volumeAmount: 0.05
 --- !u!114 &114529011543319712
 MonoBehaviour:
@@ -1954,7 +1957,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1983,6 +1986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114261590007995834}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   volumeAmount: 0.05
 --- !u!114 &114665910852501238
 MonoBehaviour:
@@ -2486,6 +2490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114261590007995834}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   volumeAmount: -0.05
 --- !u!114 &114891908934391130
 MonoBehaviour:
@@ -2598,6 +2603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114505473342054218}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
   volumeAmount: -0.05
 --- !u!114 &114944115025642734
 MonoBehaviour:
@@ -2645,7 +2651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1352069564623694}
-  button: {fileID: 114762514737751150}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114980190801165172
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -433,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1800986175457080}
-  button: {fileID: 114517886157853796}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114086232374409708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextClass: {fileID: 1586903135911516}
   thisClass: {fileID: 1138356714043152}
-  button: {fileID: 114210840556074570}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114086662567835506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextClass: {fileID: 1138356714043152}
   thisClass: {fileID: 1586903135911516}
-  button: {fileID: 114162058129354338}
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114397445299209332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -920,10 +920,10 @@ MonoBehaviour:
   changes:
   - {fileID: 114388011837630206}
   - {fileID: 114086232374409708}
-  button: {fileID: 114362777270251906}
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1800986175457080}
   presentClass: 0
+  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114598520105274348
 MonoBehaviour:
   m_ObjectHideFlags: 1

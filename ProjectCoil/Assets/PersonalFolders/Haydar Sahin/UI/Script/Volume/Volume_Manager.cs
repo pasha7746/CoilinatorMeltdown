@@ -11,8 +11,8 @@ public class Volume_Manager : MonoBehaviour
         Music
     }
 
-    public float masterVolume { get; private set; }
-    public float sfxVolume { get; private set; }
+    public float masterVolume = 1/*{ get; private set; }*/;
+    public float sfxVolume = 1 /*{ get; private set; }*/;
     public float MusicVolume { get; private set; }
     private AudioSource sfx2DSource;
     private AudioSource[] musicSound;

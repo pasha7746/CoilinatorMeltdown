@@ -12,6 +12,7 @@ public class SinglePlayerClassSelect : MonoBehaviour
     public GameObject nextMenu;
     public GameObject thisMenu;
     public int presentClass = 0;
+    public AudioClip sound;
     public void OnEnable()
     {
         button = this.GetComponent<Button>();
@@ -54,6 +55,7 @@ public class SinglePlayerClassSelect : MonoBehaviour
 
     private void StorePlayer()
     {
+        Volume_Manager.volumeBoss.Play2DSfx(sound);
         SaveClass();
         //this one is for quick testing
         //ReadyUp();
