@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PersonalFolders/Haydar Sahin/Audio/AudioTest.unity
+- path: Assets/Demo V0.2/Level1.unity
   isLoaded: 1
   isActive: 1
