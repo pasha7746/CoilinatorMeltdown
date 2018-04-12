@@ -5,7 +5,6 @@ using UnityEngine;
 public class CharacterSelectMenuSinglePlayer : MonoBehaviour
 {
     public GameObject[] menuIconsThatAreEnabled;
-    public GameObject[] menuIconsThatAreDisabled;
     public GameObject[] player1Classes;
     public SinglePlayerClassSelect player1;
     private void OnEnable()
@@ -19,17 +18,6 @@ public class CharacterSelectMenuSinglePlayer : MonoBehaviour
             foreach (GameObject go in menuIconsThatAreEnabled)
             {
                 go.SetActive(true);
-            }
-        }
-        if (menuIconsThatAreDisabled == null)
-        {
-            Debug.Log("Please Give my things that should always start disabled");
-        }
-        else
-        {
-            foreach (GameObject go in menuIconsThatAreDisabled)
-            {
-                go.SetActive(false);
             }
         }
 
