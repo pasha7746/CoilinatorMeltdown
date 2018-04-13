@@ -7,6 +7,7 @@ public class AnimationController : MonoBehaviour
 {
     private Animator myAnimation;
     public bool isReloading;
+   
 
     public enum State
     {
@@ -44,10 +45,11 @@ public class AnimationController : MonoBehaviour
 
 
     }
+    
 
     public void Reload()
     {
-        myAnimation.GetCurrentAnimatorStateInfo(0).IsName("Reload");
+       
         if (isReloading)
         {
             myAnimation.SetBool("isReloading" , false);

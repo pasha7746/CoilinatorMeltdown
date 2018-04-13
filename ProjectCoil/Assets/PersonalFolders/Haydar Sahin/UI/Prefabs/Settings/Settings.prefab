@@ -460,7 +460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1380222213932928
 GameObject:
   m_ObjectHideFlags: 1
@@ -2544,7 +2544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114505473342054218}
   sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
-  volumeAmount: -0.05
+  volumeAmount: -0.2
 --- !u!114 &114136421588442652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2753,7 +2753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114492226305792520}
   sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
-  volumeAmount: 0.05
+  volumeAmount: 0.2
 --- !u!114 &114492226305792520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3288,7 +3288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114492226305792520}
   sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
-  volumeAmount: -0.05
+  volumeAmount: -0.2
 --- !u!114 &114807336497052636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3403,7 +3403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114541213269426530}
   sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
-  volumeAmount: -0.05
+  volumeAmount: -0.2
 --- !u!114 &114877778978119886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3455,7 +3455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114505473342054218}
   sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
-  volumeAmount: 0.05
+  volumeAmount: 0.2
 --- !u!114 &114884798593966122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3583,7 +3583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114541213269426530}
   sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
-  volumeAmount: 0.05
+  volumeAmount: 0.2
 --- !u!114 &114994806157662346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4233,7 +4233,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1352069564623694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 464.7, y: 117, z: 157}
+  m_LocalPosition: {x: 464.7, y: 117, z: 157.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224347806266688358}

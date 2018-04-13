@@ -140,16 +140,21 @@ public class Shooting : MonoBehaviour
 
     public void Reload()
     {
+        if(myAnimationController.isReloading) return;
         ammo = maxAmmo;
         if (OnReload != null) OnReload();
         if (OnUpdateAmmoUI != null) OnUpdateAmmoUI();
+        myAnimationController.Play(AnimationController.State.Reload);
     }
 
     public void OnTriggerHit()
     {
-       if(myAnimationController.isReloading) return;
+        
+
         if (ammo > 0)
         {
+           
+
             switch (fireMode)
             {
                 case Mode.Single:
@@ -172,7 +177,16 @@ public class Shooting : MonoBehaviour
         }
         else
         {
-            if (OnEmptyMag != null) OnEmptyMag();
+            if (myAnimationController.isReloading)
+            {
+                return;
+            }
+            else
+            {
+                if (OnEmptyMag != null) OnEmptyMag();
+
+            }
+
         }
 
        
