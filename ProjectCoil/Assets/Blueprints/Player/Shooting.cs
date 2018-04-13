@@ -49,7 +49,9 @@ public class Shooting : MonoBehaviour
     {
         Single, Shotgun, BurstFire
     }
-  
+
+    private AnimationController myAnimationController;
+
     void Awake()
     {
         myTracker = GetComponentInParent<SteamVR_TrackedObject>();
@@ -76,6 +78,7 @@ public class Shooting : MonoBehaviour
 
         if (OnUpdateAmmoUI != null) OnUpdateAmmoUI();
 	    myPool = FindObjectOfType<Pool>();
+	    myAnimationController = GetComponentInChildren<AnimationController>();
 	}
 
     void Update()
@@ -144,6 +147,7 @@ public class Shooting : MonoBehaviour
 
     public void OnTriggerHit()
     {
+       if(myAnimationController.isReloading) return;
         if (ammo > 0)
         {
             switch (fireMode)
@@ -245,7 +249,7 @@ public class Shooting : MonoBehaviour
         Rigidbody temRigidbody= tempProjectile.GetComponent<Rigidbody>();
         temRigidbody.isKinematic = false;
         temRigidbody.AddForce((transform.forward) * projectileLaunchSpeed);
-
+        myAnimationController.Play(AnimationController.State.Fire);
 
     }
 

@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 08ac8fa6c82466d47aa738ac5341b4bc
+timeCreated: 1523587616
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: chamberSlide
+    100004: ikHandle1
+    100006: ikHandle2
+    100008: joint1
+    100010: joint2
+    100012: joint3
+    100014: joint4
+    100016: joint5
+    100018: joint6
+    100020: leverIKHandles
+    100022: leverLeft
+    100024: leverLeftBottom
+    100026: leverLeftTop
+    100028: leverRight
+    100030: leverRightBottom
+    100032: leverRightTop
+    100034: locator1
+    100036: locator2
+    100038: locator3
+    100040: locator4
+    100042: locator5
+    100044: locator6
+    100046: nurbsCircle1
+    100048: pCube17
+    100050: pCylinder37
+    100052: pCylinder37 1
+    100054: pCylinder38
+    100056: pCylinder38 1
+    100058: polySurface9
+    100060: trigger
+    400000: //RootNode
+    400002: chamberSlide
+    400004: ikHandle1
+    400006: ikHandle2
+    400008: joint1
+    400010: joint2
+    400012: joint3
+    400014: joint4
+    400016: joint5
+    400018: joint6
+    400020: leverIKHandles
+    400022: leverLeft
+    400024: leverLeftBottom
+    400026: leverLeftTop
+    400028: leverRight
+    400030: leverRightBottom
+    400032: leverRightTop
+    400034: locator1
+    400036: locator2
+    400038: locator3
+    400040: locator4
+    400042: locator5
+    400044: locator6
+    400046: nurbsCircle1
+    400048: pCube17
+    400050: pCylinder37
+    400052: pCylinder37 1
+    400054: pCylinder38
+    400056: pCylinder38 1
+    400058: polySurface9
+    400060: trigger
+    2300000: leverLeftTop
+    2300002: leverRightTop
+    2300004: pCube17
+    2300006: pCylinder37
+    2300008: pCylinder37 1
+    2300010: pCylinder38
+    2300012: pCylinder38 1
+    2300014: polySurface9
+    2300016: trigger
+    3300000: leverLeftTop
+    3300002: leverRightTop
+    3300004: pCube17
+    3300006: pCylinder37
+    3300008: pCylinder37 1
+    3300010: pCylinder38
+    3300012: pCylinder38 1
+    3300014: polySurface9
+    3300016: trigger
+    4300000: leverLeftTop
+    4300002: pCylinder38
+    4300004: pCylinder37
+    4300006: leverRightTop
+    4300008: pCylinder37
+    4300010: pCylinder38
+    4300012: pCube17
+    4300014: trigger
+    4300016: polySurface9
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 86ef709162bc1c1448a1dba1c5abaf38, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
