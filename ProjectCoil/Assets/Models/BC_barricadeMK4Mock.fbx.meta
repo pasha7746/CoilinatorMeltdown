@@ -1,0 +1,282 @@
+fileFormatVersion: 2
+guid: bf8be427eea22b647813014a65f6f725
+timeCreated: 1523586933
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BC_consolePickupStatus_0002:pSphere12
+    100004: BC_pedestalButton:pCube1
+    100006: BC_pedestalButton:pCylinder2
+    100008: BC_pedestalButton:pCylinder4
+    100010: BC_pedestalButton:polySurface11
+    100012: BC_pedestalButton:polySurface12
+    100014: BC_pedestalButton:polySurface13
+    100016: BC_pedestalButton:polySurface2
+    100018: BC_pedestalButton:polySurface4
+    100020: BC_pedestalButton:polySurface6
+    100022: group1
+    100024: group2
+    100026: group3
+    100028: group4
+    100030: pCube1
+    100032: pCube2
+    100034: pCube3
+    100036: pCube4
+    100038: pCube5
+    100040: pCylinder2
+    100042: pCylinder4
+    100044: pCylinder4 1
+    100046: pCylinder4 2
+    100048: pCylinder5
+    100050: polySurface10
+    100052: polySurface11
+    100054: polySurface12
+    100056: polySurface13
+    100058: polySurface14
+    100060: polySurface15
+    100062: polySurface16
+    100064: polySurface17
+    100066: polySurface18
+    100068: polySurface2
+    100070: polySurface2 1
+    100072: polySurface4
+    100074: polySurface4 1
+    100076: polySurface6
+    100078: polySurface7
+    400000: //RootNode
+    400002: BC_consolePickupStatus_0002:pSphere12
+    400004: BC_pedestalButton:pCube1
+    400006: BC_pedestalButton:pCylinder2
+    400008: BC_pedestalButton:pCylinder4
+    400010: BC_pedestalButton:polySurface11
+    400012: BC_pedestalButton:polySurface12
+    400014: BC_pedestalButton:polySurface13
+    400016: BC_pedestalButton:polySurface2
+    400018: BC_pedestalButton:polySurface4
+    400020: BC_pedestalButton:polySurface6
+    400022: group1
+    400024: group2
+    400026: group3
+    400028: group4
+    400030: pCube1
+    400032: pCube2
+    400034: pCube3
+    400036: pCube4
+    400038: pCube5
+    400040: pCylinder2
+    400042: pCylinder4
+    400044: pCylinder4 1
+    400046: pCylinder4 2
+    400048: pCylinder5
+    400050: polySurface10
+    400052: polySurface11
+    400054: polySurface12
+    400056: polySurface13
+    400058: polySurface14
+    400060: polySurface15
+    400062: polySurface16
+    400064: polySurface17
+    400066: polySurface18
+    400068: polySurface2
+    400070: polySurface2 1
+    400072: polySurface4
+    400074: polySurface4 1
+    400076: polySurface6
+    400078: polySurface7
+    2300000: BC_consolePickupStatus_0002:pSphere12
+    2300002: BC_pedestalButton:pCube1
+    2300004: BC_pedestalButton:pCylinder2
+    2300006: BC_pedestalButton:pCylinder4
+    2300008: BC_pedestalButton:polySurface11
+    2300010: BC_pedestalButton:polySurface12
+    2300012: BC_pedestalButton:polySurface13
+    2300014: BC_pedestalButton:polySurface2
+    2300016: BC_pedestalButton:polySurface4
+    2300018: BC_pedestalButton:polySurface6
+    2300020: pCube1
+    2300022: pCube2
+    2300024: pCube3
+    2300026: pCube4
+    2300028: pCube5
+    2300030: pCylinder2
+    2300032: pCylinder4
+    2300034: pCylinder4 1
+    2300036: pCylinder4 2
+    2300038: pCylinder5
+    2300040: polySurface10
+    2300042: polySurface11
+    2300044: polySurface12
+    2300046: polySurface13
+    2300048: polySurface14
+    2300050: polySurface15
+    2300052: polySurface16
+    2300054: polySurface17
+    2300056: polySurface18
+    2300058: polySurface2
+    2300060: polySurface2 1
+    2300062: polySurface4
+    2300064: polySurface4 1
+    2300066: polySurface6
+    2300068: polySurface7
+    3300000: BC_consolePickupStatus_0002:pSphere12
+    3300002: BC_pedestalButton:pCube1
+    3300004: BC_pedestalButton:pCylinder2
+    3300006: BC_pedestalButton:pCylinder4
+    3300008: BC_pedestalButton:polySurface11
+    3300010: BC_pedestalButton:polySurface12
+    3300012: BC_pedestalButton:polySurface13
+    3300014: BC_pedestalButton:polySurface2
+    3300016: BC_pedestalButton:polySurface4
+    3300018: BC_pedestalButton:polySurface6
+    3300020: pCube1
+    3300022: pCube2
+    3300024: pCube3
+    3300026: pCube4
+    3300028: pCube5
+    3300030: pCylinder2
+    3300032: pCylinder4
+    3300034: pCylinder4 1
+    3300036: pCylinder4 2
+    3300038: pCylinder5
+    3300040: polySurface10
+    3300042: polySurface11
+    3300044: polySurface12
+    3300046: polySurface13
+    3300048: polySurface14
+    3300050: polySurface15
+    3300052: polySurface16
+    3300054: polySurface17
+    3300056: polySurface18
+    3300058: polySurface2
+    3300060: polySurface2 1
+    3300062: polySurface4
+    3300064: polySurface4 1
+    3300066: polySurface6
+    3300068: polySurface7
+    4300000: pCube5
+    4300002: pCylinder4
+    4300004: BC_pedestalButton:pCube1
+    4300006: BC_pedestalButton:polySurface4
+    4300008: BC_pedestalButton:pCylinder2
+    4300010: BC_pedestalButton:polySurface6
+    4300012: BC_pedestalButton:polySurface2
+    4300014: BC_pedestalButton:polySurface11
+    4300016: BC_pedestalButton:polySurface12
+    4300018: BC_pedestalButton:polySurface13
+    4300020: BC_pedestalButton:pCylinder4
+    4300022: pCube1
+    4300024: polySurface4
+    4300026: pCylinder2
+    4300028: polySurface6
+    4300030: polySurface2
+    4300032: polySurface11
+    4300034: polySurface12
+    4300036: polySurface13
+    4300038: pCylinder4
+    4300040: pCylinder5
+    4300042: polySurface4
+    4300044: polySurface2
+    4300046: pCylinder4
+    4300048: polySurface17
+    4300050: polySurface15
+    4300052: polySurface14
+    4300054: polySurface18
+    4300056: polySurface16
+    4300058: polySurface7
+    4300060: polySurface10
+    4300062: pCube3
+    4300064: pCube2
+    4300066: pCube4
+    4300068: BC_consolePickupStatus_0002:pSphere12
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 02f77deb1da094243bb4ff505f365eeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: e9798bdc57fe41049a918be2b66aed6f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
