@@ -11,7 +11,7 @@ public class Pool : MonoBehaviour
 
 
     //}
-    public List<GameObject> listOfBolts= new List<GameObject>();    //public for debug
+    private List<GameObject> listOfBolts= new List<GameObject>();    //public for debug
 
 
     // Use this for initialization

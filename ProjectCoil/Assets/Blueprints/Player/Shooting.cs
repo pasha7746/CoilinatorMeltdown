@@ -29,8 +29,8 @@ public class Shooting : MonoBehaviour
     public float burstFireRate;
     public Coroutine burstFireCoroutine;
 
-    public float ammo;
-    public float maxAmmo;
+    public int ammo;
+    public int maxAmmo;
 
     public event Action OnShoot;
     public event Action OnUpdateAmmoUI;
@@ -140,6 +140,7 @@ public class Shooting : MonoBehaviour
 
     public void Reload()
     {
+        if(ammo==maxAmmo) return;
         if(myAnimationController.isReloading) return;
         ammo = maxAmmo;
         if (OnReload != null) OnReload();
@@ -154,7 +155,7 @@ public class Shooting : MonoBehaviour
         if (ammo > 0)
         {
            
-
+            if(myAnimationController.isFiring || myAnimationController.isReloading) return;
             switch (fireMode)
             {
                 case Mode.Single:

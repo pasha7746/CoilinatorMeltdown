@@ -7,7 +7,7 @@ public class AnimationController : MonoBehaviour
 {
     private Animator myAnimation;
     public bool isReloading;
-   
+    public bool isFiring;
 
     public enum State
     {
@@ -18,7 +18,7 @@ public class AnimationController : MonoBehaviour
 
     void Awake()
     {
-        myAnimation = GetComponentInChildren<Animator>();
+        myAnimation = GetComponent<Animator>();
         
     }
 
@@ -34,10 +34,10 @@ public class AnimationController : MonoBehaviour
         switch (selectAnimation)
         {
             case State.Reload:
-                Reload();
+                Reload(0);
                 break;
             case State.Fire:
-                Fire();
+                Fire(0);
                 break;
             default:
                 throw new ArgumentOutOfRangeException("selectAnimation", selectAnimation, null);
@@ -47,25 +47,33 @@ public class AnimationController : MonoBehaviour
     }
     
 
-    public void Reload()
+    public void Reload(int index)
     {
        
-        if (isReloading)
+        if (index==1)
         {
-            myAnimation.SetBool("isReloading" , false);
+            myAnimation.SetBool("isReloading", false);
+            isReloading = false;
         }
         else
         {
             myAnimation.SetBool("isReloading", true);
+            isReloading = true;
         }
 
-        isReloading = !isReloading;
-        
     }
 
-    public void Fire()
+    public void Fire(int index)
     {
-        myAnimation.SetTrigger("TriggerShoot");
+        if (index == 0)
+        {
+            isFiring = true;
+            myAnimation.SetTrigger("TriggerShoot");
+        }
+        else
+        {
+            isFiring = false;
+        }
     }
 
 }
