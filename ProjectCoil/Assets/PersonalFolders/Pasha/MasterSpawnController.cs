@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,6 +44,10 @@ public class MasterSpawnController : MonoBehaviour
     private bool waveInProgress;
 
     private int wavesLeft;
+
+    public event Action OnBarricadeComplete;
+    public event Action OnWaveComplete;
+    
      
 	// Use this for initialization
 	void Start ()
@@ -86,6 +91,7 @@ public class MasterSpawnController : MonoBehaviour
                     }
                     else
                     {
+                        
                         print("Round Complete");
                         break;
                     }
@@ -97,6 +103,7 @@ public class MasterSpawnController : MonoBehaviour
 
                     if (wavesLeft <= 0)
                     {
+                        if (OnBarricadeComplete != null) OnBarricadeComplete();
                         print("Round Complete");
                         break;
                     }
@@ -151,6 +158,7 @@ public class MasterSpawnController : MonoBehaviour
 
         }
 
+        if (OnWaveComplete != null) OnWaveComplete();
         waveInProgress = false;
         yield return null;
     }

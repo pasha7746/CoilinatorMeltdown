@@ -15,24 +15,27 @@ public class MiskPieceBreaker : MonoBehaviour
     }
 
     public List<Pieces> listOfMiskPiecesToBreak;
+    private RobotCenterHealth myHealth;
+
 
 	// Use this for initialization
 	void Start ()
 	{
-		
+	    myHealth = GetComponent<RobotCenterHealth>();
+	    myHealth.OnDeath += BreakAll;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (Input.GetKeyDown(KeyCode.S))
-	    {
-	        for (int i = 0; i < listOfMiskPiecesToBreak.Count; i++)
-	        {
+	    //if (Input.GetKeyDown(KeyCode.S))
+	    //{
+	    //    for (int i = 0; i < listOfMiskPiecesToBreak.Count; i++)
+	    //    {
 	            
 
-	        }
-	    }
+	    //    }
+	    //}
 	}
 
     public void BreakAll()
