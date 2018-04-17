@@ -4576,7 +4576,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droidHoverLenghtRange: {x: 1, y: 3}
+  myPatrolMode: {fileID: 0}
   moveLocked: 0
+  flightBehavior: 0
 --- !u!114 &114896445748500764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4588,7 +4590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d1fbcb21bace745b2c9608027495b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  myPathCluster: {fileID: 0}
+  moveSpeed: 5
+  patrol: 0
 --- !u!114 &114898373557886104
 MonoBehaviour:
   m_ObjectHideFlags: 1

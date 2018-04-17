@@ -5,33 +5,36 @@ using UnityEngine;
 
 public class NodePathCluster_Start : MonoBehaviour
 {
-    private List<NodePath> listOfRoutes= new List<NodePath>();
+    private List<NodePath> listOfRoutes = new List<NodePath>();
+    [HideInInspector]
     public FlightGrid connectedFlightGrid;
 
-	// Use this for initialization
-	void Start ()
-	{
-	    listOfRoutes = GetComponentsInChildren<NodePath>().ToList();
-        DetectConnectedFlightGrid();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    public bool isPatrolPath;
+
+    // Use this for initialization
+    void Start()
     {
-		
-	}
+        listOfRoutes = GetComponentsInChildren<NodePath>().ToList();
+        listOfRoutes.ForEach((a) => a.CustomStart());
+        if (!isPatrolPath)
+        {
+            DetectConnectedFlightGrid();
+        }
+
+    }
 
     public NodePath SelectRandomNode()
     {
-        return listOfRoutes[Random.Range(0, listOfRoutes.Count)];
+        int temp = Random.Range(0, listOfRoutes.Count);
+        // print(temp);
+        return listOfRoutes[temp];
     }
 
     public void DetectConnectedFlightGrid()
     {
-        List<Collider> tempListOfOverlaps = Physics
-            .OverlapBox(listOfRoutes[listOfRoutes.Count-1].listOfNodes[listOfRoutes[listOfRoutes.Count-1].listOfNodes.Count-1].transform.position, new Vector3(1, 1, 1)).ToList();
-        connectedFlightGrid = tempListOfOverlaps.Find((a) => a.GetComponent<FlightGrid>()).GetComponent<FlightGrid>();
+        List<Collider> tempListOfOverlaps = Physics.OverlapBox(listOfRoutes[listOfRoutes.Count - 1].listOfNodes[listOfRoutes[listOfRoutes.Count - 1].listOfNodes.Count - 1].transform.position, new Vector3(1, 1, 1)).ToList();
 
+        connectedFlightGrid = tempListOfOverlaps.Find((a) => a.GetComponent<FlightGrid>()).GetComponent<FlightGrid>();
 
     }
 }

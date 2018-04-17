@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class DemoControls : MonoBehaviour
 {
-    private TestRobotSpawner mySpawner;
-    public int ammountOfRobotsToSpawn;
-    public Shooting.Mode shootingSettingLeft;
-    public Shooting.Mode shootingSettingRight;
+    private MasterSpawnController mySpawner;
+    // public Shooting.Mode shootingSettingLeft;
+    // public Shooting.Mode shootingSettingRight;
 
-    private List<Shooting> myShooting= new List<Shooting>();
+    private List<Shooting> myShooting = new List<Shooting>();
 
     void Start()
     {
-        mySpawner = FindObjectOfType<TestRobotSpawner>();
+        mySpawner = GetComponent<MasterSpawnController>();
     }
 
     public void SpawnRobots()
     {
-        mySpawner.robotsToSpawn = ammountOfRobotsToSpawn;
-        mySpawner.StartSpawning();
+        mySpawner.LaunchWave();
     }
 
     public void UpdateGunSetting()

@@ -23,22 +23,25 @@ public class FlightPathFinding : MonoBehaviour
     //private event Action OnReadyToMove;
 
     private NodePath currentNodePath;
-    private NodePathCluster_Start myPathCluster;
+    [HideInInspector]
+    public NodePathCluster_Start myPathCluster;
     private Coroutine followingRoutine;
     private int indexCounter;
     
     public float moveSpeed;
+    [HideInInspector]
+    public bool patrol;
 
-	// Use this for initialization
-	void Start ()
-	{
-	    myCombatAreaGrid = FindObjectOfType<FlightGrid>();
-	   // OnRouteComplete += LaunchRoamMode;
-	    initialPos = transform.position;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Use this for initialization
+    // Use this for initialization
+    void Start()
+    {
+
+        initialPos = transform.position;
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         //if (Input.GetKeyDown(KeyCode.A))
         //{
@@ -55,17 +58,28 @@ public class FlightPathFinding : MonoBehaviour
         //}
     }
 
+
+
     public void MoveToCombatArea()
     {
-        myPathCluster = FindObjectOfType<NodePathCluster_Start>();
-        currentNodePath = myPathCluster.SelectRandomNode();
+        if (myPathCluster != null)
+        {
+            myCombatAreaGrid = myPathCluster.connectedFlightGrid; // moved
 
-        StartFollowingSteps();
+            currentNodePath = myPathCluster.SelectRandomNode();
+            StartFollowingSteps();
+        }
+        else
+        {
+            print("No Path Found");
+        }
+
+
     }
 
     public void TurnTowardsPlayer(Vector3 point)
     {
-       LookAtPoint(new Vector3(point.x, transform.position.y, point.z), 0.5f);
+        LookAtPoint(new Vector3(point.x, transform.position.y, point.z), 0.5f);
 
     }
     //public void LaunchRoamMode()
@@ -88,9 +102,9 @@ public class FlightPathFinding : MonoBehaviour
 
     public void AlignToGrid()
     {
-       // print("WorkerRunning");
+        // print("WorkerRunning");
 
-      //  initialPos = transform.position;
+        //  initialPos = transform.position;
 
         BackgroundWorker worker = new BackgroundWorker();
         worker.DoWork += DetectPoint;
@@ -112,8 +126,8 @@ public class FlightPathFinding : MonoBehaviour
                 {
                     if (!myCombatAreaGrid.obstacleMap[i, j, k]) continue;
                     tempDistance = Vector3.Distance(initialPos, myCombatAreaGrid.triDPos[i, j, k]);
-                    if(tempDistance>distance) continue;
-                    distance= tempDistance;
+                    if (tempDistance > distance) continue;
+                    distance = tempDistance;
                     targetPos = myCombatAreaGrid.triDPos[i, j, k];
                 }
             }
@@ -121,7 +135,7 @@ public class FlightPathFinding : MonoBehaviour
     }
     private void OnCompletDetectPoint(object sender, RunWorkerCompletedEventArgs e)
     {
-       MoveToPoint(targetPos, moveSpeed);
+        MoveToPoint(targetPos, moveSpeed);
     }
 
     public void MoveToPoint(Vector3 point, float speed)
@@ -152,9 +166,9 @@ public class FlightPathFinding : MonoBehaviour
 
     public void MoveToRandomPointOnMap()
     {
-        Vector3 target= new Vector3(Random.Range(-myCombatAreaGrid.bounds.x/2, myCombatAreaGrid.bounds.x / 2), Random.Range(-myCombatAreaGrid.bounds.y / 2, myCombatAreaGrid.bounds.y / 2), Random.Range(-myCombatAreaGrid.bounds.z / 2, myCombatAreaGrid.bounds.z / 2));
+        Vector3 target = new Vector3(Random.Range(-myCombatAreaGrid.bounds.x / 2, myCombatAreaGrid.bounds.x / 2), Random.Range(-myCombatAreaGrid.bounds.y / 2, myCombatAreaGrid.bounds.y / 2), Random.Range(-myCombatAreaGrid.bounds.z / 2, myCombatAreaGrid.bounds.z / 2));
         initialPos = transform.position + target;
-        LookAtPoint(target, 0.5f );
+        LookAtPoint(target, 0.5f);
         AlignToGrid();
 
     }
@@ -163,20 +177,21 @@ public class FlightPathFinding : MonoBehaviour
     {
         OnPointHit = null;
         OnPointHit += StartFollowingSteps;
-        MoveToPoint(path.listOfNodes.Find((a) => a.GetComponent<Node>().thisNodeType == Node.NodeType.StartNode).transform.position,5); //add speed values
+        MoveToPoint(path.listOfNodes.Find((a) => a.GetComponent<Node>().thisNodeType == Node.NodeType.StartNode).transform.position, 5); //add speed values
 
     }
 
     public void StartFollowingSteps()
     {
-       followingRoutine=  StartCoroutine(FollowSteps(currentNodePath));
+        followingRoutine = StartCoroutine(FollowSteps(currentNodePath));
+
     }
 
     public IEnumerator FollowSteps(NodePath path)
     {
         int target = path.listOfNodes.Count;
         indexCounter = 0;
-        int compare=-1;
+        int compare = -1;
         OnPointHit = null;
         OnPointHit += OnStepReached;
 
@@ -187,17 +202,17 @@ public class FlightPathFinding : MonoBehaviour
                 if (indexCounter < target)
                 {
                     MoveToPoint(path.listOfNodes[indexCounter].transform.position, moveSpeed);  //add speed values
-                    LookAtPoint(path.listOfNodes[indexCounter].transform.position,0.3f);  //add speed values
+                    LookAtPoint(path.listOfNodes[indexCounter].transform.position, 0.3f);  //add speed values
                     compare = indexCounter;
                 }
                 else
                 {
                     initialPos = transform.position;
-                    
+
                     myCombatAreaGrid = myPathCluster.connectedFlightGrid;
                     if (OnRouteComplete != null) OnRouteComplete();
                     isPathComplete = true;
-                   // print("PathComplete");
+                    // print("PathComplete");
                     break;
                 }
             }
@@ -214,7 +229,7 @@ public class FlightPathFinding : MonoBehaviour
         indexCounter++;
     }
 
-    
 
-    
+
+
 }

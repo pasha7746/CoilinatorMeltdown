@@ -13,11 +13,12 @@ public class RobotCenterHealth : MonoBehaviour
 	void Start ()
     {
 		GetComponentsInChildren<BaseRobotPiece>().ToList().ForEach((a) => { a.OnPieceHit += EventPieceIsHit; });
-        
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        OnDeath += EnemyCounter_Static.GlobalCounter_RemoveEnemy;
+
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

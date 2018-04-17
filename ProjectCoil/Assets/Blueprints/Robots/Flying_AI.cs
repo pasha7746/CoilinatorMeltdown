@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(FlightPathFinding))]
 
@@ -11,7 +13,16 @@ public class Flying_AI : MonoBehaviour
     public Vector2 droidHoverLenghtRange;
     private Coroutine waitCoroutine;
 
+    public PatrolMode myPatrolMode;
+
     public bool moveLocked; //debug only
+
+    public enum FlyType
+    {
+        Roam, Patrol
+    }
+
+    public FlyType flightBehavior;
 
     void Awake()
     {
@@ -21,31 +32,42 @@ public class Flying_AI : MonoBehaviour
     }
 
     // Use this for initialization
-	void Start ()
-	{
-	    myMovement.OnRouteComplete += myMovement.MoveToRandomPointOnMap;
-	    myMovement.OnGridPointHit += Wait;
-        if(moveLocked) return;
-		myMovement.MoveToCombatArea();
+    void Start()
+    {
+        myMovement.OnRouteComplete += myMovement.MoveToRandomPointOnMap;
+        myMovement.OnGridPointHit += Wait;
+        if (moveLocked) return;
+        switch (flightBehavior)
+        {
+            case FlyType.Roam:
 
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
+                myMovement.MoveToCombatArea();
+
+                break;
+            case FlyType.Patrol:
+                Patrol();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
+    }
+
+    public void Patrol()
+    {
+        myPatrolMode = GetComponent<PatrolMode>();
+    }
 
     public void Wait()
     {
-       
+
 
         if (waitCoroutine == null)
         {
             waitCoroutine = StartCoroutine(WaitCoroutine());
 
         }
-        
+
     }
 
     public IEnumerator WaitCoroutine()
@@ -53,7 +75,7 @@ public class Flying_AI : MonoBehaviour
         myMovement.TurnTowardsPlayer(myGuns.targetPlayers.transform.position);
         myGuns.AimGuns(myGuns.targetPlayers.transform.position);
         yield return new WaitForSeconds(Random.Range(droidHoverLenghtRange.x, droidHoverLenghtRange.y));
-       
+
         myMovement.MoveToRandomPointOnMap();
         waitCoroutine = null;
         yield return null;
