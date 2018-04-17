@@ -6,3 +6,6 @@
 // starts at 0.394 Vignette when damaged
 //fade color grading offset to black
 //Volume_Manager.volumeBoss.PlaySfx(AudioClip,transform.position); for when sound effects in
+
+//teleport to location and rotation after shooting trigger-box if active at
+//active only at end of wave

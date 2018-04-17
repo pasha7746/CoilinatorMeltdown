@@ -7,6 +7,7 @@ public class Background_Music : MonoBehaviour
     [SerializeField]
     private AudioClip[] music;
     private int currentMusicIndex = 0;
+
     // Use this for initialization
     void Start ()
 	{
