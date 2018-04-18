@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Spots : MonoBehaviour
 {
+    public enum Type
+    {
+        ShootSpot, 
+    }
+
 
 	// Use this for initialization
 	void Start ()
