@@ -1,19 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class GroundAIBase : MonoBehaviour
+public class GroundAIBase : MonoBehaviour 
 {
+    private NavMeshAgent myAgent;
 
-	// Use this for initialization
+    void Awake()
+    {
+        myAgent = GetComponent<NavMeshAgent>();
+    }
+
+    // Use this for initialization
 	void Start ()
 	{
-		
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		
-	}
+	    //if (Input.GetMouseButtonDown(0))
+	    //{
+	    //    RaycastHit hit;
+
+	    //    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+	    //    {
+	    //        myAgent.destination = hit.point;
+	    //    }
+	    //}
+    }
+
+   
 }

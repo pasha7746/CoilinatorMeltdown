@@ -13,7 +13,7 @@ public class Flying_AI : MonoBehaviour
     public Vector2 droidHoverLenghtRange;
     private Coroutine waitCoroutine;
 
-    public PatrolMode myPatrolMode;
+    //public PatrolGrid MyPatrolGrid;
 
     public bool moveLocked; //debug only
 
@@ -45,7 +45,7 @@ public class Flying_AI : MonoBehaviour
 
                 break;
             case FlyType.Patrol:
-                Patrol();
+              //  Patrol();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -53,10 +53,10 @@ public class Flying_AI : MonoBehaviour
 
     }
 
-    public void Patrol()
-    {
-        myPatrolMode = GetComponent<PatrolMode>();
-    }
+    //public void Patrol()
+    //{
+    //    MyPatrolGrid = GetComponent<PatrolGrid>();
+    //}
 
     public void Wait()
     {

@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114386169013681484}
   - component: {fileID: 114883819643342926}
   - component: {fileID: 114349270667660652}
+  - component: {fileID: 195120686553858892}
+  - component: {fileID: 114509632096029744}
   m_Layer: 0
   m_Name: ScoutBot
   m_TagString: Untagged
@@ -1784,6 +1786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921993208034112}
   - component: {fileID: 95436139118151264}
+  - component: {fileID: 114000371761144348}
   m_Layer: 0
   m_Name: Live
   m_TagString: Untagged
@@ -2114,7 +2117,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4801662300320542}
-  - component: {fileID: 95111935316116600}
   m_Layer: 0
   m_Name: Broken
   m_TagString: Untagged
@@ -4025,7 +4027,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010138171709536}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.63, z: -1.43}
+  m_LocalPosition: {x: -1.1048037, y: 0.5, z: -2.2668386}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4921993208034112}
@@ -8540,23 +8542,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05084044, y: 0.0069557405, z: 0.04942259}
   m_Center: {x: 0.0000000018626451, y: 0.0000000029103835, z: 0.000000033527613}
---- !u!95 &95111935316116600
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1965301112845970}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7a248caa5d290da4480a59d47ee60e86, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95436139118151264
 Animator:
   serializedVersion: 3
@@ -8566,7 +8551,7 @@ Animator:
   m_GameObject: {fileID: 1819903755920860}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7a248caa5d290da4480a59d47ee60e86, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd5db8a2a0103394395a26307a67a5cc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8574,6 +8559,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000371761144348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819903755920860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e74896188876b145826fe39105a58d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114017885007491864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8856,6 +8852,17 @@ MonoBehaviour:
   breakPriority: 0
   isPieceBreakable: 1
   pieceDurability: 50
+--- !u!114 &114509632096029744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010138171709536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaa92eb841ab764ebf21f6243b93e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114633964575679554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8919,3 +8926,24 @@ MonoBehaviour:
   breakPriority: 0
   isPieceBreakable: 1
   pieceDurability: 20
+--- !u!195 &195120686553858892
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010138171709536}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.8
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.6
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

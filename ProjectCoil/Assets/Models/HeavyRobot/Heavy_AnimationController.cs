@@ -7,6 +7,8 @@ using UnityEngine;
 public class Heavy_AnimationController : MonoBehaviour
 {
     private Animator myAnimator;
+    public event Action OnDeathAnimDone; 
+
 
     void Awake()
     {
@@ -88,5 +90,9 @@ public class Heavy_AnimationController : MonoBehaviour
         myAnimator.SetTrigger("TriggerOnDeath");
     }
 
+    public void DeathAnimationDone()
+    {
+        if (OnDeathAnimDone != null) OnDeathAnimDone();
+    }
 
 }

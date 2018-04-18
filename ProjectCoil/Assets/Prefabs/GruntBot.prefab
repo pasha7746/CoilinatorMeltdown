@@ -2725,7 +2725,8 @@ GameObject:
   - component: {fileID: 114635683413653796}
   - component: {fileID: 114475964739276542}
   - component: {fileID: 114211269776037696}
-  - component: {fileID: 114889648865154362}
+  - component: {fileID: 195521226579167526}
+  - component: {fileID: 114773466015214124}
   m_Layer: 0
   m_Name: GruntBot
   m_TagString: Untagged
@@ -3107,7 +3108,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4450332928991794}
-  - component: {fileID: 95690937035214864}
   m_Layer: 0
   m_Name: Broken
   m_TagString: Untagged
@@ -3773,6 +3773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4335408947402320}
   - component: {fileID: 95583105269968250}
+  - component: {fileID: 114798581264508754}
   m_Layer: 0
   m_Name: Live
   m_TagString: Untagged
@@ -6294,7 +6295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629743348307430}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.75, z: -2.33}
+  m_LocalPosition: {x: -4.9577885, y: 0.5, z: -2.380866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4335408947402320}
@@ -16531,24 +16532,7 @@ Animator:
   m_GameObject: {fileID: 1862755849599792}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cbe653601edac72439f73d2d67bdf8c7, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95690937035214864
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726513857204420}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: cbe653601edac72439f73d2d67bdf8c7, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a3b4bc89ac3a2e46b0a790e6244defb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17102,7 +17086,7 @@ MonoBehaviour:
   breakPriority: 0
   isPieceBreakable: 1
   pieceDurability: 20
---- !u!114 &114889648865154362
+--- !u!114 &114773466015214124
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -17110,71 +17094,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629743348307430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98e8a85aac21b244d9c0cafd290b8b15, type: 3}
+  m_Script: {fileID: 11500000, guid: daaa92eb841ab764ebf21f6243b93e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfMisk:
-  - {fileID: 1290022041369730}
-  - {fileID: 1602101466575386}
-  - {fileID: 1869777497580890}
-  - {fileID: 1031413382302378}
-  - {fileID: 1987078096366626}
-  - {fileID: 1912259844672134}
-  - {fileID: 1961438261488924}
-  - {fileID: 1811899766771904}
-  - {fileID: 1154971526386408}
-  - {fileID: 1826307282781092}
-  - {fileID: 1268356430737810}
-  - {fileID: 1718912280306966}
-  - {fileID: 1899721756358458}
-  - {fileID: 1120376837619876}
-  - {fileID: 1540692661126970}
-  - {fileID: 1245285628584220}
-  - {fileID: 1169240979593524}
-  - {fileID: 1429153334427884}
-  - {fileID: 1353698345866646}
-  - {fileID: 1522220705354516}
-  - {fileID: 1978713781909648}
-  - {fileID: 1580688957191338}
-  - {fileID: 1535561316615786}
-  - {fileID: 1558191871507970}
-  - {fileID: 1782439036093582}
-  - {fileID: 1363131878872286}
-  - {fileID: 1143415862688672}
-  - {fileID: 1819674460139296}
-  - {fileID: 1658570844819594}
-  - {fileID: 1980750022783592}
-  - {fileID: 1036778064037388}
-  - {fileID: 1061829310596704}
-  - {fileID: 1019116476735472}
-  - {fileID: 1626076945838600}
-  - {fileID: 1405787172466994}
-  - {fileID: 1953205485484962}
-  - {fileID: 1374605831955692}
-  - {fileID: 1101159058202658}
-  - {fileID: 1363065855969736}
-  - {fileID: 1898905949800490}
-  - {fileID: 1315858486278240}
-  - {fileID: 1053615783005768}
-  - {fileID: 1655439946599528}
-  - {fileID: 1935284408522636}
-  - {fileID: 1790909732015984}
-  - {fileID: 1035697316581232}
-  - {fileID: 1059397376181096}
-  - {fileID: 1567212261933936}
-  - {fileID: 1278726715456776}
-  - {fileID: 1280139673192528}
-  - {fileID: 1328429095736340}
-  - {fileID: 1465976157497898}
-  - {fileID: 1866966989010596}
-  - {fileID: 1458395355793750}
-  - {fileID: 1566757931488284}
-  - {fileID: 1422986611336994}
-  - {fileID: 1052436779295876}
-  - {fileID: 1550525733505502}
-  - {fileID: 1911273148944212}
-  - {fileID: 1562372520348414}
-  - {fileID: 1534869906159004}
+--- !u!114 &114798581264508754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862755849599792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1f6aeeac3957648b044e6ea25a4593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114913917028836456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17209,3 +17142,24 @@ MonoBehaviour:
   breakPriority: 0
   isPieceBreakable: 1
   pieceDurability: 120
+--- !u!195 &195521226579167526
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1629743348307430}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
