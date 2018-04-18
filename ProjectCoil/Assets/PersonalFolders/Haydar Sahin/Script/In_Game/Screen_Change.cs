@@ -50,13 +50,13 @@ public class Screen_Change : MonoBehaviour
     #endregion
     
     // Update is called once per frame //testing code
-	void Update ()
-	{
-		if(Input.GetKeyDown(KeyCode.F))
-		{
-		    player.ChangeHealth(-5.0f);
-		}
-	}
+	//void Update ()
+	//{
+	//	if(Input.GetKeyDown(KeyCode.F))
+	//	{
+	//	    player.ChangeHealth(-5.0f);
+	//	}
+	//}
 
     private void OnDisable()
     {
