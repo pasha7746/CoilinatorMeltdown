@@ -251,7 +251,7 @@ public class Shooting : MonoBehaviour
         Physics.Raycast(transform.position, transform.forward, out hit, raycastScanDistance,mask);
 
        // GameObject tempProjectile = Instantiate(projectile, transform.position + transform.TransformDirection(spawnOfset), transform.rotation);
-        GameObject tempProjectile= myPool.GiveProjectile();
+        GameObject tempProjectile= myPool.Give_PlayerProjectile();
         tempProjectile.SetActive(true);
         tempProjectile.transform.position = transform.position + transform.TransformDirection(spawnOfset);
         tempProjectile.transform.rotation = transform.rotation;

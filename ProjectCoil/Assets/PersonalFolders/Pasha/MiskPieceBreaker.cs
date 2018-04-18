@@ -16,7 +16,7 @@ public class MiskPieceBreaker : MonoBehaviour
 
     public List<Pieces> listOfMiskPiecesToBreak;
     private RobotCenterHealth myHealth;
-
+    
 
 	// Use this for initialization
 	void Start ()
@@ -39,8 +39,9 @@ public class MiskPieceBreaker : MonoBehaviour
         piece.brokenColl.enabled = true;
         piece.brokenRig.isKinematic = false;
         piece.broken.transform.parent = null;
-
         
     }
+
+     
 
 }

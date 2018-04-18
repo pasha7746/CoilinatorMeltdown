@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class RobotPieceBreak : BaseRobotPiece
+public class RobotPieceBreak : BaseRobotPiece 
 {
   
     public event Action<RobotPieceBreak> OnPieceBreak;
@@ -34,6 +34,7 @@ public class RobotPieceBreak : BaseRobotPiece
 
     public void PieceGetsHit(float damage)
     {
+        if(!isPieceBreakable) return;
         pieceDurability -= damage;
         if (pieceDurability <= 0)
         {

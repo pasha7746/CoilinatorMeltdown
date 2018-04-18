@@ -9,13 +9,15 @@ public class RobotBreakableCenter : MonoBehaviour
     public float robotPieceDespawnTime;
     private bool isBreakingUp;
     public float finalBreakupDellay;
+    private MiskPieceBreaker myMiskPieceBreaker;
+
 
     void Awake()
     {
         breakablePieces = GetComponentsInChildren<BaseRobotPiece>().ToList();
+        myMiskPieceBreaker = GetComponent<MiskPieceBreaker>();
     }
-
-
+    
     // Use this for initialization
 	void Start ()
     {
@@ -67,6 +69,7 @@ public class RobotBreakableCenter : MonoBehaviour
     public IEnumerator CountdownFinalDespawn()
     {
         yield return new WaitForSeconds(finalBreakupDellay);
+        myMiskPieceBreaker.listOfMiskPiecesToBreak.ForEach((a)=>Destroy(a.broken));
         Destroy(gameObject);
         yield return null;
     }
