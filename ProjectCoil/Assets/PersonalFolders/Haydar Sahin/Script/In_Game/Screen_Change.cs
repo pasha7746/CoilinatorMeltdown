@@ -19,8 +19,14 @@ public class Screen_Change : MonoBehaviour
     private ColorGradingModel colorGradingModel;
     private ColorGradingModel.Settings colorGradingSettings;
     public float offsetA;
+    public float powerA;
+    public float slopeA;
+    public float offsetR;
     public float fadeSpeed;
     private Coroutine fadeToBlackCoroutine;
+    private Coroutine fadeToNormalCoroutine;
+    public float waitTimer;
+    public float waitTimerTeleportStall;
     #endregion
     // Use this for initialization
     private void OnEnable()
@@ -64,19 +70,52 @@ public class Screen_Change : MonoBehaviour
     #endregion
 
     #region fade Functions
+
     public IEnumerator FadeToBlack()
     {
         colorGradingModel.enabled = true;
         while (offsetA > -1)
         {
-          offsetA -= fadeSpeed * Time.deltaTime;
-          colorGradingSettings.colorWheels.log.offset.a = offsetA;
-          colorGradingModel.settings = colorGradingSettings;
+            offsetA -= fadeSpeed;
+            powerA -= fadeSpeed;
+            slopeA -= fadeSpeed;
+            colorGradingSettings.colorWheels.log.offset.a = offsetA;
+            colorGradingSettings.colorWheels.log.power.a = powerA;
+            colorGradingSettings.colorWheels.log.slope.a = slopeA;
+            colorGradingModel.settings = colorGradingSettings;
+            yield return new WaitForSeconds(waitTimer);
         }
 
         if (offsetA < -1f)
         {
             offsetA = -1f;
+            powerA = -1;
+            slopeA = -1;
+        }
+        yield return new WaitForSeconds(waitTimerTeleportStall);
+        fadeToNormalCoroutine = StartCoroutine(FadeToNormal());
+    }
+
+    public IEnumerator FadeToNormal()
+    {
+        colorGradingModel.enabled = true;
+        while (offsetA < 0)
+        {
+            offsetA += fadeSpeed;
+            powerA += fadeSpeed;
+            slopeA += fadeSpeed;
+            colorGradingSettings.colorWheels.log.offset.a = offsetA;
+            colorGradingSettings.colorWheels.log.power.a = powerA;
+            colorGradingSettings.colorWheels.log.slope.a = slopeA;
+            colorGradingModel.settings = colorGradingSettings;
+            yield return new WaitForSeconds(waitTimer);
+        }
+
+        if (offsetA > 0)
+        {
+            offsetA = 0;
+            powerA = 0;
+            slopeA = 0;
         }
         yield return null;
     }
@@ -86,23 +125,32 @@ public class Screen_Change : MonoBehaviour
         if (offsetA > 0)
         {
             offsetA = 0;
+            powerA = 0;
+            slopeA = 0;
         }
         colorGradingSettings.colorWheels.log.offset.a = offsetA;
+        colorGradingSettings.colorWheels.log.power.a = powerA;
+        colorGradingSettings.colorWheels.log.slope.a = slopeA;
         colorGradingModel.settings = colorGradingSettings;
         colorGradingModel.enabled = false;
     }
     #endregion
     
-    // Update is called once per frame //testing code
+    // Update is called once per frame //test code area
     void Update()
     {
-        colorGradingSettings.colorWheels.log.offset.a = offsetA;
-        colorGradingModel.settings = colorGradingSettings;
+        #region Fade Test
+        //colorGradingSettings.colorWheels.log.offset.a = offsetA;
+        //colorGradingSettings.colorWheels.log.power.a = powerA;
+        //colorGradingSettings.colorWheels.log.slope.a = slopeA;
+        //colorGradingModel.settings = colorGradingSettings;
         //offsetA -= 0.02f;
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            fadeToBlackCoroutine = StartCoroutine(FadeToBlack());
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    fadeToBlackCoroutine = StartCoroutine(FadeToBlack());
+        //}
+        #endregion
+        
     }
     private void OnDisable()
     {

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4630380794514074}
   - component: {fileID: 114526738628817392}
   - component: {fileID: 114737726057392110}
+  - component: {fileID: 114616312289113900}
   m_Layer: 0
   m_Name: Volume_Manager
   m_TagString: Untagged
@@ -52,7 +53,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a96901f143ea24781158333666a958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114737726057392110
+  masterVolume: 1
+  sfxVolume: 1
+--- !u!114 &114616312289113900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -60,11 +63,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1091645220439460}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15158a4f3f995c449541ed756709e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSounds:
+  - {fileID: 8300000, guid: 6c9815bccb39d594b9f54b8445f7640c, type: 3}
+  - {fileID: 8300000, guid: b1fb0e8ba223cb34194e94f6ace55306, type: 3}
+  - {fileID: 8300000, guid: 9720c065226e4f743be53ae077764700, type: 3}
+  - {fileID: 8300000, guid: 422d79c12590a5d4fa33e5a7db5b0b4d, type: 3}
+  - {fileID: 8300000, guid: 3bb509f8936c8c94eac36131e05ef000, type: 3}
+  - {fileID: 8300000, guid: 3a033eedb2bf7c14aae25dd1b39e4640, type: 3}
+  - {fileID: 8300000, guid: 6c9815bccb39d594b9f54b8445f7640c, type: 3}
+  - {fileID: 8300000, guid: 03ac7113934b0264cbb9a444f127c333, type: 3}
+  - {fileID: 8300000, guid: 9720c065226e4f743be53ae077764700, type: 3}
+  - {fileID: 8300000, guid: f11f3e90231e45340a0f30981644470a, type: 3}
+  - {fileID: 8300000, guid: 3bb509f8936c8c94eac36131e05ef000, type: 3}
+  - {fileID: 8300000, guid: e22ad6240a40e234bbdb12f74a66611a, type: 3}
+  - {fileID: 8300000, guid: 6c9815bccb39d594b9f54b8445f7640c, type: 3}
+  - {fileID: 8300000, guid: da84d10925c42a14dbb8536265048934, type: 3}
+  - {fileID: 8300000, guid: 9720c065226e4f743be53ae077764700, type: 3}
+  - {fileID: 8300000, guid: cc022d4e168099e40a7c13bc57aa433e, type: 3}
+  hasImpacted: 0
+  timer: 0
+  minSoundTimer: 0
+  maxSoundTimer: 1
+  soundTimer1: 0
+  soundTimer2: 0
+  soundTimer3: 0
+  soundTimer4: 0
+--- !u!114 &114737726057392110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091645220439460}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9cf0b9550098ae46bc652564a983c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleMusic: {fileID: 8300000, guid: f61a2bdef55bcf344adf9f103f70f524, type: 3}
-  relaxMusic: {fileID: 8300000, guid: a6365758d66523441af1908c948a7571, type: 3}
   music:
   - {fileID: 8300000, guid: f61a2bdef55bcf344adf9f103f70f524, type: 3}
   - {fileID: 8300000, guid: a6365758d66523441af1908c948a7571, type: 3}
