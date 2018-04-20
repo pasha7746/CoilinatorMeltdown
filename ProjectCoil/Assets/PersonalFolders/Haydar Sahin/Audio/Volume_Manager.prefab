@@ -83,14 +83,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: da84d10925c42a14dbb8536265048934, type: 3}
   - {fileID: 8300000, guid: 9720c065226e4f743be53ae077764700, type: 3}
   - {fileID: 8300000, guid: cc022d4e168099e40a7c13bc57aa433e, type: 3}
-  hasImpacted: 0
-  timer: 0
   minSoundTimer: 0
   maxSoundTimer: 1
-  soundTimer1: 0
-  soundTimer2: 0
-  soundTimer3: 0
-  soundTimer4: 0
+  callCheck: 0
 --- !u!114 &114737726057392110
 MonoBehaviour:
   m_ObjectHideFlags: 1
