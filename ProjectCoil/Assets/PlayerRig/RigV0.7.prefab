@@ -2920,8 +2920,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975146569178244}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9698591, y: 0.55, z: -6.046031}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 9.733616, y: 1.962, z: -18.487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4464662392800130}
@@ -2930,7 +2930,7 @@ Transform:
   - {fileID: 4375250861709858}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4464662392800130
 Transform:
   m_ObjectHideFlags: 1
@@ -5893,8 +5893,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a0e85f5aa76164b92a490a6f390c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1422529440040548, guid: 38a7121bcaadd0d40be695c89bb95990,
-    type: 2}
+  playerBolt: {fileID: 0}
+  droneProjectile: {fileID: 0}
+  heavyRocket: {fileID: 0}
 --- !u!114 &114231773212077632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6181,9 +6182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 100
+  health: 10
   healthRegenerates: 1
-  regenerationRate: 0
+  regenerationRate: 1
 --- !u!114 &114738157524059124
 MonoBehaviour:
   m_ObjectHideFlags: 1
