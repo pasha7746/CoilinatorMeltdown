@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,25 +21,28 @@ public class Missile : MonoBehaviour
     private Quaternion rot;
     private bool isLive;
     public float liveAfterXSec;
+    public float speed;
 
     void Awake()
     {
         myMeshRenderer = GetComponentInChildren<MeshRenderer>();
         myExplosionsCollection = GetComponentInChildren<ExplosionsCollection>();
         myRigidbody = GetComponent<Rigidbody>();
+        
     }
 
     void Start()
     {
         GetComponent<Rigidbody>().centerOfMass = centerOfMass;
+        target = FindObjectOfType<Players>().gameObject;
     }
 
     void Update()
     {
         if (isLive)
         {
-            transform.LookAt(target.transform.position);
-            
+           // transform.LookAt(target.transform.position);
+           // myRigidbody.AddForce(Vector3.back * 10);
         }
         else
         {
@@ -53,6 +57,7 @@ public class Missile : MonoBehaviour
 
     void OnEnable()
     {
+        
         if (liveTimer != null)
         {
             StopAllCoroutines();
@@ -63,14 +68,18 @@ public class Missile : MonoBehaviour
 
     public void Fly(float force)
     {
-        myRigidbody.AddForce((Vector3.back+ Vector3.up)* force* 20);
+        myRigidbody.AddForce((transform.up+ (transform.forward)) * force* 10);
     }
 
     public IEnumerator LiveCountdown()
     {
         yield return new WaitForSeconds(liveAfterXSec);
         isLive = true;
-        myRigidbody.useGravity = false;
+        ////myRigidbody.useGravity = false;
+        //myRigidbody.AddForce((Vector3.back + Vector3.up* 1000));
+        transform.DOLookAt(target.transform.position, 0.5f);
+        transform.DOMove(target.transform.position,
+            Vector3.Distance(transform.position, target.transform.position) / (speed)).SetEase(Ease.Linear);
 
         yield return new WaitForSeconds(liveTime- liveAfterXSec);
         isLive = false;
@@ -92,7 +101,8 @@ public class Missile : MonoBehaviour
     public void Explode()
     {
         myMeshRenderer.enabled = false;
-        explosionCache = myExplosionsCollection.listOfExplosions[Random.Range(0, myExplosionsCollection.listOfExplosions.Count - 1)];
+        int index = Random.Range(0, myExplosionsCollection.listOfExplosions.Count - 1);
+        explosionCache = myExplosionsCollection.listOfExplosions[index];
         explosionCache.SetActive(true);
         explosionCache.transform.parent = null;
         explosionCache.transform.position = transform.position;
@@ -104,6 +114,7 @@ public class Missile : MonoBehaviour
     {
         yield return new WaitForSeconds(liveTime);
         explosionCache.SetActive(false);
+        if (OnDeath != null) OnDeath(gameObject);
     }
 
     public void AreaDamage()
