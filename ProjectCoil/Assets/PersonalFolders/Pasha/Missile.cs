@@ -35,10 +35,20 @@ public class Missile : MonoBehaviour
 
     void Update()
     {
-        rot = transform.rotation;
-        rot.SetLookRotation( myRigidbody.velocity);
+        if (isLive)
+        {
+            transform.LookAt(target.transform.position);
+            
+        }
+        else
+        {
+            rot = transform.rotation;
+            rot.SetLookRotation(myRigidbody.velocity);
+            transform.rotation = rot;
+        }
         
-        transform.rotation = rot;
+
+
     }
 
     void OnEnable()
@@ -60,6 +70,7 @@ public class Missile : MonoBehaviour
     {
         yield return new WaitForSeconds(liveAfterXSec);
         isLive = true;
+        myRigidbody.useGravity = false;
 
         yield return new WaitForSeconds(liveTime- liveAfterXSec);
         isLive = false;
