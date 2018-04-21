@@ -89,9 +89,9 @@ public class Pool : MonoBehaviour
         missile.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
 
-        if (!listOfBolts.Contains(missile))
+        if (!listOfMissiles.Contains(missile))
         {
-            listOfBolts.Add(missile);
+            listOfMissiles.Add(missile);
 
         }
     }

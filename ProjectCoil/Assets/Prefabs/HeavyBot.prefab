@@ -13240,8 +13240,7 @@ MonoBehaviour:
   - {fileID: 1007554082538020}
   - {fileID: 1239080087857016}
   - {fileID: 1299383508596616}
-  debugRocket: {fileID: 1864457733386030, guid: 59521439fe452cc459ec841ba9cb2fd5,
-    type: 2}
+  launchForce: 1000
 --- !u!114 &114565862786212636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13305,7 +13304,7 @@ MonoBehaviour:
   - {fileID: 1486769437288002}
   - {fileID: 1635849674794270}
   - {fileID: 1913066448382778}
-  debugRocket: {fileID: 0}
+  launchForce: 1000
 --- !u!114 &114646654827396390
 MonoBehaviour:
   m_ObjectHideFlags: 1
