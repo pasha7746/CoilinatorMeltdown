@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PersonalFolders/Pasha/test.unity
+- path: Assets/Levels/Level_2/Level2.unity
   isLoaded: 1
   isActive: 1
