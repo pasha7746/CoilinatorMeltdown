@@ -27,6 +27,7 @@ public class Heavy_Guns : MonoBehaviour
     public float baseDamage;
     private RobotPieceBreak myGunPiece;
     private bool isGunLocked;
+    public Vector2 fireRate;
 
     void Awake()
     {
@@ -48,7 +49,7 @@ public class Heavy_Guns : MonoBehaviour
 	{
 	   //// if (Input.GetKeyDown(KeyCode.Space))
 	   // {
-    //        Shoot(6);
+        //   Shoot(6);
 	   // }
 	}
 
@@ -88,7 +89,13 @@ public class Heavy_Guns : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(Random.Range(0.2f,2));
+            yield return new WaitForSeconds(Random.Range(fireRate.x,fireRate.y));
+        }
+
+        if (ammountOfRockets == 6)
+        {
+
+            if (OnReload != null) OnReload();
         }
 
         shootCoroutine = null;

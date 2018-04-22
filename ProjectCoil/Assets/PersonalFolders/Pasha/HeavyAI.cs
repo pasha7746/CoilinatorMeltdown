@@ -9,20 +9,22 @@ using Random = UnityEngine.Random;
 public class HeavyAI : GroundAIBase
 {
     public List<Heavy_Guns> listOfHeavyGuns= new List<Heavy_Guns>();
-
     public enum Events
     {
-        Retreat,
-        Attack
+        
+        Attack,
+        Wait
     }
-   
+
+    private bool isRetreatComplete= true;
+    private Heavy_AnimationController myAnimationController;
 
 
-
-	// Use this for initialization
+    // Use this for initialization
 	void Start ()
 	{
-		listOfHeavyGuns.AddRange(GetComponentsInChildren<Heavy_Guns>());
+	    myAnimationController = GetComponentInChildren<Heavy_AnimationController>();
+        listOfHeavyGuns.AddRange(GetComponentsInChildren<Heavy_Guns>());
         listOfHeavyGuns.ForEach((a) =>
         {
             a.OnReload += Retreat;
@@ -38,6 +40,7 @@ public class HeavyAI : GroundAIBase
 
     public void PositionToShoot()
     {
+       if(!isRetreatComplete) return;
         Zone tempZone=  myZoneManager.Open.Find((a) => a.linkedBarricade_1 == masterManager.mySpawnController.currentBarricadeIndex);
         if (tempZone == null)
         {
@@ -70,40 +73,52 @@ public class HeavyAI : GroundAIBase
 
     public IEnumerator WaitForArrivalAtDestination(Events action)
     {
+        myAnimationController.Play(Heavy_AnimationController.States.MoveForwards);
         yield return new WaitForSeconds(0.1f);
         while (true)
         {
-         
-           if (myAgent.remainingDistance <= myAgent.stoppingDistance/2)
+           
+
+            if (Vector3.Distance(myAgent.pathEndPosition, transform.position) <= myAgent.stoppingDistance)
             {
                 switch (action)
                 {
-                    case Events.Retreat:
-                        PositionToShoot();
-                        break;
+                   
                     case Events.Attack:
+                        
                         Aim();
+                        break;
+                    case Events.Wait:
+                        myAnimationController.Play(Heavy_AnimationController.States.Stop);
+                        isRetreatComplete = true;
+                        PositionToShoot();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException("action", action, null);
                 }
                 break;
             }
-            
+
+            yield return new WaitForEndOfFrame();
         }
         yield return null;
     }
 
     public void Aim()
     {
-        transform.DOLookAt(listOfHeavyGuns[0].myTarget.transform.position, 1);
-        Shoot();
+        transform.DOLookAt(listOfHeavyGuns[0].myTarget.transform.position, 1).OnComplete(Shoot);
+       // Shoot();
     }
+
+   
 
     public void Shoot()
     {
+        myAnimationController.Play(Heavy_AnimationController.States.Stop);
+        myAnimationController.Play(Heavy_AnimationController.States.Shoot);
         foreach (var cGun in listOfHeavyGuns)
         {
+            
             cGun.Shoot(6);
         }
 
@@ -111,6 +126,7 @@ public class HeavyAI : GroundAIBase
 
     public void Retreat()
     {
+        isRetreatComplete = false;
         Zone tempZone = myZoneManager.Safe.Find((a) => a.linkedBarricade_1 == masterManager.mySpawnController.currentBarricadeIndex);
         if (tempZone == null)
         {
@@ -122,7 +138,7 @@ public class HeavyAI : GroundAIBase
             }
         }
         myAgent.SetDestination(SelectRandomPositionInTheZone(tempZone));
-        StartCoroutine(WaitForArrivalAtDestination(Events.Retreat));
+        StartCoroutine(WaitForArrivalAtDestination(Events.Wait));
 
     }
 

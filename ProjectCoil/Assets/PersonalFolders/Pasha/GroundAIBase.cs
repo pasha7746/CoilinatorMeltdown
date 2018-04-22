@@ -8,6 +8,7 @@ public class GroundAIBase : MonoBehaviour
     protected NavMeshAgent myAgent;
     protected ZoneManager myZoneManager;
 
+
     void Awake()
     {
         myAgent = GetComponent<NavMeshAgent>();

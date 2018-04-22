@@ -92,7 +92,7 @@ MonoBehaviour:
         spawnedObject: {fileID: 1859237663524544, guid: 9d44b51b91cc92e4ba51f3fde0ed100a,
           type: 2}
         spawnerToUse: {fileID: 0}
-        number: 2
+        number: 1
         spawnDelays: 2
       - typeOfEnemy: 0
         spawnedObject: {fileID: 1605606424614368, guid: f118caf0b5d2b1748aa6d9dacdbf96c7,
@@ -159,7 +159,8 @@ MonoBehaviour:
   Enclosed: []
   Cover: []
   Overlook: []
-  Safe: []
+  Safe:
+  - {fileID: 0}
   LongDistance: []
   Close: []
   ExactPoint: []

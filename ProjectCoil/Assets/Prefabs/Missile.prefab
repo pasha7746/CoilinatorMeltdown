@@ -1995,10 +1995,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liveTime: 10
   centerOfMass: {x: 0, y: 0.3, z: 0}
-  blastRadius: 2
+  blastRadius: 1
   target: {fileID: 0}
   liveAfterXSec: 1
-  speed: 5
+  speed: 3
   baseDamage: 0
 --- !u!114 &114161439311405460
 MonoBehaviour:
