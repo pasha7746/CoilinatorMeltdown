@@ -6,29 +6,24 @@ using UnityEngine.AI;
 public class GroundAIBase : MonoBehaviour 
 {
     private NavMeshAgent myAgent;
+    private ZoneManager myZoneManager;
 
     void Awake()
     {
         myAgent = GetComponent<NavMeshAgent>();
+        myZoneManager = masterManager.myZoneManager;
     }
 
     // Use this for initialization
 	void Start ()
 	{
+	    myAgent.SetDestination(myZoneManager.listOfZones[0].transform.position);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    //if (Input.GetMouseButtonDown(0))
-	    //{
-	    //    RaycastHit hit;
-
-	    //    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
-	    //    {
-	    //        myAgent.destination = hit.point;
-	    //    }
-	    //}
+	   
     }
 
    

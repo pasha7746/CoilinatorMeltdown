@@ -24,6 +24,8 @@ public class Heavy_Guns : MonoBehaviour
     private bool isReloading;
     public Vector2 controlForce;
     public float baseDamage;
+    private RobotPieceBreak myGunPiece;
+    private bool isGunLocked;
 
     void Awake()
     {
@@ -36,7 +38,8 @@ public class Heavy_Guns : MonoBehaviour
 	void Start ()
 	{
 	    OnReload += Reload;
-
+	    myGunPiece = GetComponentInChildren<RobotPieceBreak>();
+	    myGunPiece.OnPieceBreak += OnGunBreaks;
 	}
 	
 	// Update is called once per frame
@@ -47,6 +50,16 @@ public class Heavy_Guns : MonoBehaviour
             Shoot(6);
 	    }
 	}
+
+    public void OnGunBreaks(RobotPieceBreak brokenPiece)
+    {
+        foreach (var cRocket in listOfRocketObjects)
+        {
+            cRocket.SetActive(false);
+        }
+        StopAllCoroutines();
+        isGunLocked = true;
+    }
 
     public IEnumerator ShootRoutine(int ammountOfRockets)
     {
@@ -85,6 +98,7 @@ public class Heavy_Guns : MonoBehaviour
 
     public void Shoot(int ammountOfRockets)
     {
+        if(isGunLocked) return;
         if(shootCoroutine!=null || reloadCoroutine!=null) return;
         shootCoroutine = StartCoroutine(ShootRoutine(ammountOfRockets));
 

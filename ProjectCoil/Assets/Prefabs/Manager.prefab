@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114075464454368370}
   - component: {fileID: 114185605779933372}
   - component: {fileID: 114427530044688910}
+  - component: {fileID: 114560092582540600}
+  - component: {fileID: 114540712375705650}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -64,7 +66,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a0e85f5aa76164b92a490a6f390c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1422529440040548, guid: 38a7121bcaadd0d40be695c89bb95990,
+  playerBolt: {fileID: 1422529440040548, guid: 38a7121bcaadd0d40be695c89bb95990, type: 2}
+  droneProjectile: {fileID: 1666364352616400, guid: f00f1009df2708f4e885ccfc37e1dcdc,
+    type: 2}
+  heavyRocket: {fileID: 1864457733386030, guid: 59521439fe452cc459ec841ba9cb2fd5,
     type: 2}
 --- !u!114 &114427530044688910
 MonoBehaviour:
@@ -84,7 +89,7 @@ MonoBehaviour:
   - listOfWaves:
     - listOfThingsToSpawnInWave:
       - typeOfEnemy: 0
-        spawnedObject: {fileID: 1605606424614368, guid: f118caf0b5d2b1748aa6d9dacdbf96c7,
+        spawnedObject: {fileID: 1859237663524544, guid: 9d44b51b91cc92e4ba51f3fde0ed100a,
           type: 2}
         spawnerToUse: {fileID: 0}
         number: 3
@@ -127,3 +132,27 @@ MonoBehaviour:
         number: 20
         spawnDelays: 1
       numberOfThingsLeftBeforeNextWave: 0
+--- !u!114 &114540712375705650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043363697373400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210af2b17fdc3c446b1f30ca9b8bce82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114560092582540600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043363697373400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7621204b74fc6e4cad80b5d5e1f575e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfZones:
+  - {fileID: 0}
