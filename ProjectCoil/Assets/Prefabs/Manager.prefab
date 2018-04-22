@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBolt: {fileID: 1422529440040548, guid: 38a7121bcaadd0d40be695c89bb95990, type: 2}
-  droneProjectile: {fileID: 1666364352616400, guid: f00f1009df2708f4e885ccfc37e1dcdc,
+  enemyProjectile: {fileID: 1666364352616400, guid: f00f1009df2708f4e885ccfc37e1dcdc,
     type: 2}
   heavyRocket: {fileID: 1864457733386030, guid: 59521439fe452cc459ec841ba9cb2fd5,
     type: 2}

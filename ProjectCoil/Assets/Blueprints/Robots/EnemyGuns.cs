@@ -29,7 +29,9 @@ public class EnemyGuns : MonoBehaviour
     public List<GunStats> gunList;
     public List<Coroutine> fireRoutineList= new List<Coroutine>();
     public int[] cAmmo;
-
+    public event Action<Vector3, float> OnNeedReload;
+    public float reloadTime;
+    
 
     // Use this for initialization
     void Start ()
@@ -52,11 +54,14 @@ public class EnemyGuns : MonoBehaviour
 	        cAmmo[i] = gunList[i].maxAmmo;
 	    }
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	   
+
+    public void AddAmmo()
+    {
+        for (int i = 0; i < gunList.Count; i++)
+        {
+          //  Debug.Break();
+            cAmmo[i] = gunList[i].maxAmmo;
+        }
     }
 
     public void OnDeathCutOfFireRoutines()
@@ -91,7 +96,19 @@ public class EnemyGuns : MonoBehaviour
 
     public void Reload()
     {
-        
+        RaycastHit hit;
+        int layers = 1 << 15;
+        layers = ~layers;
+        Physics.Raycast(transform.position, Vector3.down,out hit,50,layers, QueryTriggerInteraction.Ignore);
+        Debug.DrawRay(transform.position, Vector3.down*20, Color.green, 200f);
+        if (hit.collider)
+        {
+            if (hit.collider.gameObject.isStatic)
+            {
+                if (OnNeedReload != null) OnNeedReload(hit.point, reloadTime);
+            }
+        }
+
     }
 
     public TweenCallback AimComplete(GunStats cGun, int index)

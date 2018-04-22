@@ -51,12 +51,27 @@ public class Flying_AI : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
 
+        myGuns.OnNeedReload += LandForReload;
+        myGuns.OnNeedReload += EventNeedReload;
+        myMovement.OnReloadWaitComplete += myGuns.AddAmmo;
+        myMovement.OnReloadWaitComplete += MoveUnlocked;
     }
 
-    //public void Patrol()
-    //{
-    //    MyPatrolGrid = GetComponent<PatrolGrid>();
-    //}
+    public void EventNeedReload(Vector3 none, float none1)
+    {
+        moveLocked = true;
+    }
+
+    public void MoveUnlocked()
+    {
+        moveLocked = false;
+        Wait();
+    }
+
+    public void LandForReload(Vector3 landCoord, float waitTime)
+    {
+        myMovement.Land(landCoord, waitTime);
+    }
 
     public void Wait()
     {
@@ -72,6 +87,7 @@ public class Flying_AI : MonoBehaviour
 
     public IEnumerator WaitCoroutine()
     {
+        if (moveLocked) yield return null;
         myMovement.TurnTowardsPlayer(myGuns.targetPlayers.transform.position);
         myGuns.AimGuns(myGuns.targetPlayers.transform.position);
         yield return new WaitForSeconds(Random.Range(droidHoverLenghtRange.x, droidHoverLenghtRange.y));

@@ -4423,7 +4423,7 @@ MonoBehaviour:
     shotsInBurst: {x: 0, y: 3}
     barrelEnding: {fileID: 0}
     accuracy: 0.588
-    maxAmmo: 10
+    maxAmmo: 1
     projectileLifetime: 5
     baseDamage: 5
   - gunModel: {fileID: 1121629452298882}
@@ -4434,10 +4434,11 @@ MonoBehaviour:
     shotsInBurst: {x: 0, y: 3}
     barrelEnding: {fileID: 0}
     accuracy: 0.659
-    maxAmmo: 10
+    maxAmmo: 1
     projectileLifetime: 5
     baseDamage: 5
   cAmmo: 
+  reloadTime: 5
 --- !u!114 &114283688997937710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4576,7 +4577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droidHoverLenghtRange: {x: 1, y: 3}
-  myPatrolMode: {fileID: 0}
   moveLocked: 0
   flightBehavior: 0
 --- !u!114 &114896445748500764
@@ -4591,8 +4591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPathCluster: {fileID: 0}
-  moveSpeed: 5
-  patrol: 0
+  moveSpeed: 15
+  landHeight: 1
 --- !u!114 &114898373557886104
 MonoBehaviour:
   m_ObjectHideFlags: 1

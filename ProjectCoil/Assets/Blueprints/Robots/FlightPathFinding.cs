@@ -17,6 +17,7 @@ public class FlightPathFinding : MonoBehaviour
     private event Action OnPointHit;
     public event Action OnGridPointHit;
     public event Action OnRouteComplete;
+    public event Action OnReloadWaitComplete;
 
     private bool isPathComplete;
     //private event Action OnReadyForCombat;
@@ -29,8 +30,13 @@ public class FlightPathFinding : MonoBehaviour
     private int indexCounter;
     
     public float moveSpeed;
-    [HideInInspector]
-    public bool patrol;
+
+    private float reloadTime;
+
+    private Vector3 reloadOrigin;
+    private bool isReloading;
+    public float landHeight;
+
 
     // Use this for initialization
     // Use this for initialization
@@ -111,8 +117,7 @@ public class FlightPathFinding : MonoBehaviour
         worker.RunWorkerCompleted += OnCompletDetectPoint;
         worker.RunWorkerAsync();
     }
-
-
+    
     private void DetectPoint(object sender, DoWorkEventArgs e)
     {
         Vector3 point = new Vector3();
@@ -145,6 +150,49 @@ public class FlightPathFinding : MonoBehaviour
         transform.DOMove(point, newSpeed).SetEase(Ease.Linear).OnComplete(EventPointHit);
     }
 
+    public void Land(Vector3 point, float time)
+    {
+        if(isReloading) return;
+        isReloading = true;
+        reloadOrigin = transform.position;
+        StopAllCoroutines();
+        float newSpeed = 0;
+        point.y += landHeight;
+
+        newSpeed = Vector3.Distance(transform.position, point) / moveSpeed;
+        reloadTime = time;
+        transform.DOMove(point, newSpeed).SetEase(Ease.Linear).OnComplete(WaitForReload);
+       // Debug.Break();
+    }
+
+    public void WaitForReload()
+    {
+        StartCoroutine(WaitForReloadEnumerator(reloadTime));
+    }
+
+    public IEnumerator WaitForReloadEnumerator(float time)
+    {
+        float newSpeed = Vector3.Distance(transform.position, reloadOrigin) / moveSpeed;
+        yield return new WaitForSeconds(time);
+        transform.DOMove(reloadOrigin, newSpeed).SetEase(Ease.Linear).OnComplete(ReturnToOrigin);
+        
+        yield return null;
+    }
+
+    public void ReturnToOrigin()
+    {
+        StartCoroutine(ReturnToOriginEnumerator());
+    }
+
+    public IEnumerator ReturnToOriginEnumerator()
+    {
+        isReloading = false;
+
+        if (OnReloadWaitComplete != null) OnReloadWaitComplete();
+        yield return new WaitForEndOfFrame();
+        yield return null;
+    }
+
     public void LookAtPoint(Vector3 point, float speed)
     {
         float newSpeed = 0;
@@ -166,6 +214,7 @@ public class FlightPathFinding : MonoBehaviour
 
     public void MoveToRandomPointOnMap()
     {
+        if(isReloading) return;
         Vector3 target = new Vector3(Random.Range(-myCombatAreaGrid.bounds.x / 2, myCombatAreaGrid.bounds.x / 2), Random.Range(-myCombatAreaGrid.bounds.y / 2, myCombatAreaGrid.bounds.y / 2), Random.Range(-myCombatAreaGrid.bounds.z / 2, myCombatAreaGrid.bounds.z / 2));
         initialPos = transform.position + target;
         LookAtPoint(target, 0.5f);

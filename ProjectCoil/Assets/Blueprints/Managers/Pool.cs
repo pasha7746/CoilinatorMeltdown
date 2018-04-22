@@ -7,7 +7,7 @@ public class Pool : MonoBehaviour
 {
     [Header("Projectiles")]
     public GameObject playerBolt;
-    public GameObject droneProjectile;
+    public GameObject enemyProjectile;
     public GameObject heavyRocket;
     
     private List<GameObject> listOfBolts= new List<GameObject>();    //public for debug
