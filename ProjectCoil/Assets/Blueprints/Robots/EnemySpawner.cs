@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public List<NodePathCluster_Start> listOfConnectedFlightGrid;
     public List<NodePathCluster_Start> listOfConnectedPaths;
     public event Action OnCompleteSpawn;
+    
 
     public void StartSpawning(MasterSpawnController.TypeOfEnemyInWave spawnData)
     {
@@ -30,6 +31,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 case MasterSpawnController.EnemyType.DroneRoam:
                     robotCache.GetComponent<FlightPathFinding>().myPathCluster = listOfConnectedFlightGrid[Random.Range(0, listOfConnectedFlightGrid.Count)];
+
+                 //   robotCache.GetComponent<FlightPathFinding>().myPathCluster = listOfConnectedFlightGrid[0];
                     break;
                 case MasterSpawnController.EnemyType.DronePatrol:
                     break;

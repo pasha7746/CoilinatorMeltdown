@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZoneManager : MonoBehaviour
 {
-    public List<Zone> listOfZones;
+    //public List<Zone> listOfZones;
 
     public enum ZoneTypes
     {
@@ -14,12 +14,23 @@ public class ZoneManager : MonoBehaviour
         Overlook,
         Safe,
         LongDistance,
-        Close
+        Close, 
+        ExactPoint
 
     }
 
-	// Use this for initialization
-	void Start ()
+    public List<Zone> Open,
+        Enclosed,
+        Cover,
+        Overlook,
+        Safe,
+        LongDistance,
+        Close,
+        ExactPoint;
+
+
+    // Use this for initialization
+    void Start ()
 	{
 		
 

@@ -10,7 +10,8 @@ public class Heavy_Guns : MonoBehaviour
 {
     public List<GameObject> listOfRocketObjects;
     public float launchForce;
-    private Players myTarget;
+    [HideInInspector]
+    public Players myTarget;
     private GameObject rocketCache;
     
     private GameObject rocketCapCache;
@@ -45,10 +46,10 @@ public class Heavy_Guns : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	   // if (Input.GetKeyDown(KeyCode.Space))
-	    {
-            Shoot(6);
-	    }
+	   //// if (Input.GetKeyDown(KeyCode.Space))
+	   // {
+    //        Shoot(6);
+	   // }
 	}
 
     public void OnGunBreaks(RobotPieceBreak brokenPiece)

@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class GroundAIBase : MonoBehaviour 
 {
-    private NavMeshAgent myAgent;
-    private ZoneManager myZoneManager;
+    protected NavMeshAgent myAgent;
+    protected ZoneManager myZoneManager;
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class GroundAIBase : MonoBehaviour
     // Use this for initialization
 	void Start ()
 	{
-	    myAgent.SetDestination(myZoneManager.listOfZones[0].transform.position);
+	   // myAgent.SetDestination(myZoneManager.listOfZones[0].transform.position);
 	}
 	
 	// Update is called once per frame
@@ -26,5 +26,6 @@ public class GroundAIBase : MonoBehaviour
 	   
     }
 
+    
    
 }
