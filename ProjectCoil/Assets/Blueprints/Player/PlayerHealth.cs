@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : BaseHealth
 {
     public float maxHealth;
     public float health;
@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     public event Action<float> OnHealthChange;
     public event Action OnHealthZero;
+    public event Action OnDeath;
 
     private PlayerTrigger myPlayerTrigger;
 
@@ -52,6 +53,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public override void Damage(float baseDamage)
+    {
+        base.Damage(baseDamage);
+        ChangeHealth(baseDamage);
+    }
+
     public void ChangeHealth(float change)
     {
         if (health > 0)
@@ -62,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             if (OnHealthZero != null) OnHealthZero();
+            if (OnDeath != null) OnDeath();
         }
         else if(health>maxHealth)
         {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class RobotCenterHealth : MonoBehaviour
+public class RobotCenterHealth : BaseHealth
 {
     public float robotHealth;
     public event Action OnDeath;
@@ -25,10 +25,21 @@ public class RobotCenterHealth : MonoBehaviour
 
     public void EventPieceIsHit(float damage)
     {
+       ApplyDamage(damage);
+    }
+
+    public void ApplyDamage(float damage)
+    {
         robotHealth -= damage;
         if (robotHealth <= 0)
         {
             if (OnDeath != null) OnDeath();
         }
+    }
+
+    public override void Damage(float baseDamage)
+    {
+        base.Damage(baseDamage);
+        ApplyDamage(baseDamage);
     }
 }

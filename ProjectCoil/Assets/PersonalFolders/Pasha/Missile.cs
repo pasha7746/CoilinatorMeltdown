@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Missile : MonoBehaviour
+public class Missile : BaseHealth
 {
     public float liveTime;
     private Coroutine liveTimer;
@@ -22,6 +23,9 @@ public class Missile : MonoBehaviour
     private bool isLive;
     public float liveAfterXSec;
     public float speed;
+    [HideInInspector]
+    public float baseDamage;
+    public event Action OnTrack; 
 
     void Awake()
     {
@@ -35,6 +39,7 @@ public class Missile : MonoBehaviour
     {
         GetComponent<Rigidbody>().centerOfMass = centerOfMass;
         target = FindObjectOfType<Players>().gameObject;
+        OnHit += Explode;
     }
 
     void Update()
@@ -66,9 +71,9 @@ public class Missile : MonoBehaviour
         liveTimer= StartCoroutine(LiveCountdown());
     }
 
-    public void Fly(float force)
+    public void Fly(float force, Vector2 controlForce)
     {
-        myRigidbody.AddForce((transform.up+ (transform.forward)) * force* 10);
+        myRigidbody.AddForce(((transform.up* controlForce.y)+ (transform.forward)* controlForce.x) * force* 10);
     }
 
     public IEnumerator LiveCountdown()
@@ -80,7 +85,7 @@ public class Missile : MonoBehaviour
         transform.DOLookAt(target.transform.position, 0.5f);
         transform.DOMove(target.transform.position,
             Vector3.Distance(transform.position, target.transform.position) / (speed)).SetEase(Ease.Linear);
-
+        if (OnTrack != null) OnTrack();
         yield return new WaitForSeconds(liveTime- liveAfterXSec);
         isLive = false;
         if (OnDeath != null) OnDeath(gameObject);
@@ -91,6 +96,8 @@ public class Missile : MonoBehaviour
     {
         if(!isLive) return;
 
+       
+
         if (other.GetComponent<PlayerTrigger>() || other.GetComponent<RobotPieceBreak>() || !other.isTrigger)
         {
             Explode();
@@ -100,6 +107,8 @@ public class Missile : MonoBehaviour
 
     public void Explode()
     {
+        if (!isLive) return;
+       
         myMeshRenderer.enabled = false;
         int index = Random.Range(0, myExplosionsCollection.listOfExplosions.Count - 1);
         explosionCache = myExplosionsCollection.listOfExplosions[index];
@@ -108,17 +117,46 @@ public class Missile : MonoBehaviour
         explosionCache.transform.position = transform.position;
         explosionTimer = StartCoroutine(ExplosionCountdown());
         isLive = false;
+        AreaDamage();
     }
 
     public IEnumerator ExplosionCountdown()
     {
         yield return new WaitForSeconds(liveTime);
         explosionCache.SetActive(false);
+        explosionCache.transform.parent = myExplosionsCollection.transform;
+        explosionCache.transform.localPosition= Vector3.zero;
         if (OnDeath != null) OnDeath(gameObject);
     }
 
     public void AreaDamage()
     {
+        List<GameObject> listOfHitThingsTemp= new List<GameObject>();
+        listOfHitThingsTemp.AddRange(Physics.OverlapSphere(transform.position,blastRadius).ToList().ConvertAll((a)=>a.gameObject));
+        List<BaseHealth> listOfDamaged= new List<BaseHealth>();
+        BaseHealth tempHealth;
+        for (int i = 0; i < listOfHitThingsTemp.Count; i++)
+        {
+            tempHealth = listOfHitThingsTemp[i].GetComponent<BaseHealth>();
+            if (tempHealth == null)
+            {
+                tempHealth = listOfHitThingsTemp[i].GetComponentInChildren<BaseHealth>();
+                if (tempHealth == null)
+                {
+                    tempHealth = listOfHitThingsTemp[i].GetComponentInParent<BaseHealth>();
+                    if (tempHealth == null)
+                    {
+                        continue;
+                    }
+                }
+            }
+            listOfDamaged.Add(tempHealth);
+
+        }
+        listOfDamaged.ForEach((a)=>a.Damage(-baseDamage));
+
+        
+
 
     }
 

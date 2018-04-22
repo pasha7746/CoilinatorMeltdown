@@ -22,6 +22,8 @@ public class Heavy_Guns : MonoBehaviour
     public float reloadRate;
     public Coroutine reloadCoroutine;
     private bool isReloading;
+    public Vector2 controlForce;
+    public float baseDamage;
 
     void Awake()
     {
@@ -61,7 +63,9 @@ public class Heavy_Guns : MonoBehaviour
 
                 rocketCapCache.SetActive(false);
                 rocketCache.SetActive(true);
-                rocketCache.GetComponent<Missile>().Fly(launchForce);
+                Missile tempMissile = rocketCache.GetComponent<Missile>();
+                tempMissile.baseDamage = baseDamage;
+                tempMissile.Fly(launchForce, controlForce);
                 if (OnShoot != null) OnShoot();
             }
             else
