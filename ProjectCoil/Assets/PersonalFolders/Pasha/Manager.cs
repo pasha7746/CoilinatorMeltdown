@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour
         masterManager.myPool = GetComponent<Pool>();
         masterManager.mySpawnController = GetComponent<MasterSpawnController>();
         masterManager.myZoneManager = GetComponent<ZoneManager>();
+
     }
 
 }

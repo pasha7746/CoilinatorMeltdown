@@ -15,6 +15,8 @@ public class BreakableObject : MonoBehaviour
     public Vector2 blashForceRange;
     public Vector2 blastForceRadius;
     private List<Rigidbody> listOfShrapnelRigidbodies= new List<Rigidbody>();
+    private Points myPoints;
+
 
     void Awake()
     {
@@ -24,8 +26,9 @@ public class BreakableObject : MonoBehaviour
 
     // Use this for initialization
 	void Start ()
-    {
-		
+	{
+	    myPoints = GetComponent<Points>();
+	    OnObjectHit = myPoints.Score_Med;
 	}
 	
 	// Update is called once per frame

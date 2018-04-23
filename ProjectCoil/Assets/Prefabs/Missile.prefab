@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 54966252997667344}
   - component: {fileID: 114159381562597100}
   - component: {fileID: 65152981621494974}
+  - component: {fileID: 114730023547477286}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -900,7 +901,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1864457733386030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.93, z: 0}
+  m_LocalPosition: {x: -3.837481, y: 0.5, z: -6.271088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4231666633212424}
@@ -1554,7 +1555,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 86ef709162bc1c1448a1dba1c5abaf38, type: 2}
+  - {fileID: 2100000, guid: 9794a8b021ab5dd44acf45f3541a0b61, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1580,7 +1581,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808204424372686}
-  m_Mesh: {fileID: 4300000, guid: c7c5edddd63a11d4b9a06332c260be4a, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0987ba1ad04fc23498e87cf8dbce5cf5, type: 3}
 --- !u!54 &54966252997667344
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -2106,6 +2107,20 @@ MonoBehaviour:
   _lihgt: {fileID: 108935878471927212}
   Delay: 0.5
   Down: 2
+--- !u!114 &114730023547477286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1864457733386030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 0
+  highPoints: 300
 --- !u!114 &114828607779004610
 MonoBehaviour:
   m_ObjectHideFlags: 1

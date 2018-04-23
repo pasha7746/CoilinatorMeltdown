@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 114247411784131302}
   - component: {fileID: 54750714259528814}
   - component: {fileID: 65930704467668916}
+  - component: {fileID: 114911497557511404}
   m_Layer: 0
   m_Name: Barrel_HEX
   m_TagString: Untagged
@@ -395,7 +396,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1405666055333494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.013709, y: 1.3, z: -3.5365248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4032322564372412}
@@ -1137,3 +1138,17 @@ MonoBehaviour:
   despawnTimer: 2
   blashForceRange: {x: 1000, y: 2000}
   blastForceRadius: {x: 1, y: 10}
+--- !u!114 &114911497557511404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405666055333494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 100
+  highPoints: 0

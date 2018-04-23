@@ -25,7 +25,8 @@ public class Missile : BaseHealth
     public float speed;
     [HideInInspector]
     public float baseDamage;
-    public event Action OnTrack; 
+    public event Action OnTrack;
+    private Points myPoints;
 
     void Awake()
     {
@@ -40,6 +41,8 @@ public class Missile : BaseHealth
         GetComponent<Rigidbody>().centerOfMass = centerOfMass;
         target = FindObjectOfType<Players>().gameObject;
         OnHit += Explode;
+        myPoints = GetComponent<Points>();
+        
     }
 
     void Update()
@@ -100,6 +103,11 @@ public class Missile : BaseHealth
 
         if (other.GetComponent<PlayerTrigger>() || other.GetComponent<RobotPieceBreak>() || !other.isTrigger)
         {
+            if (other.GetComponent<Projectile>())
+            {
+                myPoints.Score_High();
+            }
+
             Explode();
         }
        

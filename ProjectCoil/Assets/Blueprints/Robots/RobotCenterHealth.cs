@@ -14,7 +14,8 @@ public class RobotCenterHealth : BaseHealth
     {
 		GetComponentsInChildren<BaseRobotPiece>().ToList().ForEach((a) => { a.OnPieceHit += EventPieceIsHit; });
         OnDeath += EnemyCounter_Static.GlobalCounter_RemoveEnemy;
-
+        Points myPoints = GetComponent<Points>();
+        OnDeath += myPoints.Score_High;
     }
 
     // Update is called once per frame

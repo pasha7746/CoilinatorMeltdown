@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4833775156221584}
   - component: {fileID: 114700735869430992}
   - component: {fileID: 65078237466955634}
+  - component: {fileID: 114076128761408258}
   m_Layer: 0
   m_Name: AIR_robot_high_combine_uv_left_mini_gun
   m_TagString: Untagged
@@ -93,6 +94,7 @@ GameObject:
   - component: {fileID: 23805231539960420}
   - component: {fileID: 114199397654993656}
   - component: {fileID: 65714916394971778}
+  - component: {fileID: 114361473459156026}
   m_Layer: 0
   m_Name: AIR_robot_high_combine_uv_Eye
   m_TagString: Untagged
@@ -198,6 +200,7 @@ GameObject:
   - component: {fileID: 23583832910759926}
   - component: {fileID: 114703251048961660}
   - component: {fileID: 65294351207901242}
+  - component: {fileID: 114899872480041482}
   m_Layer: 0
   m_Name: AIR_robot_high_combine_uv_Left_shell
   m_TagString: Untagged
@@ -229,7 +232,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4590106318858448}
-  - component: {fileID: 114516890342199302}
   m_Layer: 0
   m_Name: Broken
   m_TagString: Untagged
@@ -370,6 +372,7 @@ GameObject:
   - component: {fileID: 23581818871989640}
   - component: {fileID: 114185136612095070}
   - component: {fileID: 65239720015182928}
+  - component: {fileID: 114283626797815828}
   m_Layer: 0
   m_Name: AIR_robot_high_combine_uv_right_engine
   m_TagString: Untagged
@@ -406,6 +409,7 @@ GameObject:
   - component: {fileID: 23446227839379266}
   - component: {fileID: 114412223248258682}
   - component: {fileID: 65850875295773160}
+  - component: {fileID: 114898685473284274}
   m_Layer: 0
   m_Name: AIR_robot_Combine_FORWARDS_200frm_fix
   m_TagString: Untagged
@@ -493,6 +497,7 @@ GameObject:
   - component: {fileID: 23339046965572722}
   - component: {fileID: 114642842351584102}
   - component: {fileID: 65887927811770186}
+  - component: {fileID: 114138862439299642}
   m_Layer: 0
   m_Name: AIR_robot_high_combine_uv_Right_shell
   m_TagString: Untagged
@@ -528,7 +533,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4783490786145950}
   - component: {fileID: 95443318807241984}
-  - component: {fileID: 114145340328260006}
   m_Layer: 0
   m_Name: Live
   m_TagString: Untagged
@@ -618,6 +622,7 @@ GameObject:
   - component: {fileID: 4552948985659836}
   - component: {fileID: 114065110794045124}
   - component: {fileID: 65921764905005310}
+  - component: {fileID: 114180970159900846}
   m_Layer: 0
   m_Name: AIR_robot_high_combine_uv_right_mini_gun
   m_TagString: Untagged
@@ -695,6 +700,7 @@ GameObject:
   - component: {fileID: 114883348212225624}
   - component: {fileID: 114502282168591664}
   - component: {fileID: 114898373557886104}
+  - component: {fileID: 114686212965979208}
   m_Layer: 0
   m_Name: FlyingDrone
   m_TagString: Untagged
@@ -803,6 +809,7 @@ GameObject:
   - component: {fileID: 23982843514884816}
   - component: {fileID: 114550495747480066}
   - component: {fileID: 65820133465153602}
+  - component: {fileID: 114305552251414554}
   m_Layer: 0
   m_Name: AIR_robot_high_combine_uv_left_engine
   m_TagString: Untagged
@@ -1383,7 +1390,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605606424614368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18712664, y: 1.73, z: 2.0461483}
+  m_LocalPosition: {x: -0.9005616, y: 1.84, z: 4.084737}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4783490786145950}
@@ -4827,6 +4834,20 @@ MonoBehaviour:
   breakPriority: 0
   isPieceBreakable: 1
   pieceDurability: 80
+--- !u!114 &114076128761408258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019000532075112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 100
+  highPoints: 0
 --- !u!114 &114082375885028538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4838,19 +4859,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8c231a57405ea4c9392181ce208af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114145340328260006
+--- !u!114 &114138862439299642
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416936714193488}
+  m_GameObject: {fileID: 1387309277084598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98e8a85aac21b244d9c0cafd290b8b15, type: 3}
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfMisk: []
-  giveMaterial: {fileID: 2100000, guid: 66f51564ab62cc04f9fc4e00319a0dd1, type: 2}
+  lowPoints: 10
+  medPoints: 50
+  highPoints: 0
+--- !u!114 &114180970159900846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523024044235556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 100
+  highPoints: 0
 --- !u!114 &114185136612095070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4922,6 +4958,48 @@ MonoBehaviour:
     baseDamage: 5
   cAmmo: 0100000001000000
   reloadTime: 5
+--- !u!114 &114283626797815828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1320270625986788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 50
+  highPoints: 0
+--- !u!114 &114305552251414554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728991343441412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 50
+  highPoints: 0
+--- !u!114 &114361473459156026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094967726787834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 200
+  highPoints: 0
 --- !u!114 &114412223248258682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4974,42 +5052,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robotPieceDespawnTime: 5
   finalBreakupDellay: 6
---- !u!114 &114516890342199302
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1228153579834992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd4702427208bf40983973e526ffe74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListOfMsMeshRenderers:
-  - {fileID: 23635599677595198}
-  - {fileID: 23314610198334378}
-  - {fileID: 23436095704582024}
-  - {fileID: 23339326974634614}
-  - {fileID: 23945608507921638}
-  - {fileID: 23063543287332096}
-  - {fileID: 23165585056563822}
-  - {fileID: 23619141924918294}
-  - {fileID: 23986705230704528}
-  - {fileID: 23248459382369358}
-  - {fileID: 23341470827938656}
-  - {fileID: 23940535884134742}
-  - {fileID: 23930557689474536}
-  - {fileID: 23442321818489196}
-  - {fileID: 23468601557527558}
-  - {fileID: 23440051832898710}
-  - {fileID: 23236663662760434}
-  - {fileID: 23653120468269600}
-  - {fileID: 23606214291400142}
-  - {fileID: 23131467647938256}
-  - {fileID: 23901381161673682}
-  - {fileID: 23050014158587592}
-  - {fileID: 23622237054690532}
-  - {fileID: 23648089563654848}
 --- !u!114 &114550495747480066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5055,6 +5097,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8c231a57405ea4c9392181ce208af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114686212965979208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605606424614368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 0
+  medPoints: 0
+  highPoints: 500
 --- !u!114 &114700735869430992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5129,3 +5185,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotHealth: 20
+--- !u!114 &114898685473284274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323368335388204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 20
+  medPoints: 0
+  highPoints: 0
+--- !u!114 &114899872480041482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164766232358924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowPoints: 10
+  medPoints: 50
+  highPoints: 0

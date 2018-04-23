@@ -8,5 +8,4 @@ public static class masterManager
     public static MasterSpawnController mySpawnController;
     public static ZoneManager myZoneManager;
 
-
 }

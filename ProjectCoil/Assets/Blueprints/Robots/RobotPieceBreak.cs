@@ -10,7 +10,7 @@ public class RobotPieceBreak : BaseRobotPiece
   
     public event Action<RobotPieceBreak> OnPieceBreak;
     public bool isPieceBreakable;
-
+    private Points myPoints;
     public float pieceDurability;
 
     void Awake()
@@ -29,6 +29,24 @@ public class RobotPieceBreak : BaseRobotPiece
             OnPieceHit += PieceGetsHit;
 
         }
+    }
+
+    void Start()
+    {
+         myPoints = GetComponent<Points>();
+         OnPieceBreak += SendPointsOnBreak;
+         OnPieceHit += SendPointsOnHit;
+
+    }
+
+    public void SendPointsOnHit(float none)
+    {
+        myPoints.Score_Low();
+    }
+
+    public void SendPointsOnBreak(RobotPieceBreak none)
+    {
+        myPoints.Score_Med();
     }
 
 
