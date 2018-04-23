@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/PersonalFolders/Haydar Sahin/UI/UITest.unity
+=======
+- path: Assets/PersonalFolders/Pasha/test.unity
+>>>>>>> master
   isLoaded: 1
   isActive: 1

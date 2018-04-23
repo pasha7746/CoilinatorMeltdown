@@ -11,13 +11,13 @@ public class miniHelper : MonoBehaviour
     private MiskPieceBreaker myBreaker;
     public List<GameObject> listOfMisk= new List<GameObject>();
     private List<MeshRenderer> taGameObjects= new List<MeshRenderer>();
-    
+    public Material giveMaterial;
 
     // Use this for initialization
     void Start ()
 	{
 	    myClone = FindObjectOfType<miniClone>();
-	    myBreaker = FindObjectOfType<MiskPieceBreaker>();
+	    //myBreaker = FindObjectOfType<MiskPieceBreaker>();
 
 
 	    taGameObjects = GetComponentsInChildren<MeshRenderer>().ToList();
@@ -36,30 +36,45 @@ public class miniHelper : MonoBehaviour
 
     public void DoThings()
     {
-        MiskPieceBreaker.Pieces piece = new MiskPieceBreaker.Pieces();
+       // MiskPieceBreaker.Pieces piece = new MiskPieceBreaker.Pieces();
+
+        for (int i = 0; i < taGameObjects.Count; i++)
+        {
+            if (myClone)
+            {
+                taGameObjects[i].gameObject.GetComponent<MeshFilter>().mesh =
+                    myClone.ListOfMsMeshRenderers[i].gameObject.GetComponent<MeshFilter>().mesh;
+
+            }
+
+            taGameObjects[i].material = giveMaterial;
+        }
+
+
+
 
         for (int i = 0; i < listOfMisk.Count; i++)
         {
-            piece.broken = listOfMisk[i].gameObject;
+            //piece.broken = listOfMisk[i].gameObject;
 
-            piece.original =
-                        myClone.listOfTags.Find((a) =>
-                        {
-                            if (a.gameObject.name == listOfMisk[i].gameObject.name)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        }).gameObject;
-            piece.brokenColl = listOfMisk[i].gameObject.GetComponent<BoxCollider>();
-            piece.brokenRend = listOfMisk[i].GetComponent<MeshRenderer>();
-            piece.brokenRig = listOfMisk[i].gameObject.GetComponent<Rigidbody>();
+            //piece.original =
+            //            myClone.listOfTags.Find((a) =>
+            //            {
+            //                if (a.gameObject.name == listOfMisk[i].gameObject.name)
+            //                {
+            //                    return true;
+            //                }
+            //                else
+            //                {
+            //                    return false;
+            //                }
+            //            }).gameObject;
+            //piece.brokenColl = listOfMisk[i].gameObject.GetComponent<BoxCollider>();
+            //piece.brokenRend = listOfMisk[i].GetComponent<MeshRenderer>();
+            //piece.brokenRig = listOfMisk[i].gameObject.GetComponent<Rigidbody>();
 
 
-            myBreaker.listOfMiskPiecesToBreak.Add(piece);
+            //myBreaker.listOfMiskPiecesToBreak.Add(piece);
         }
 
         foreach (var tata in taGameObjects)
