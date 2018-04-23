@@ -10,17 +10,15 @@ public class miniHelper : MonoBehaviour
     private miniClone myClone;
     private MiskPieceBreaker myBreaker;
     public List<GameObject> listOfMisk= new List<GameObject>();
-    private List<MeshRenderer> taGameObjects= new List<MeshRenderer>();
     public Material giveMaterial;
 
     // Use this for initialization
     void Start ()
-	{
+    {
+        myBreaker = GetComponentInParent<MiskPieceBreaker>();
 	    myClone = FindObjectOfType<miniClone>();
-	    //myBreaker = FindObjectOfType<MiskPieceBreaker>();
+        listOfMisk.Clear();
 
-
-	    taGameObjects = GetComponentsInChildren<MeshRenderer>().ToList();
 	    DoThings();
 
     }
@@ -30,119 +28,72 @@ public class miniHelper : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-           // DoThings();
+           DoThings();
         }
     }
 
     public void DoThings()
     {
-       // MiskPieceBreaker.Pieces piece = new MiskPieceBreaker.Pieces();
+        List<MeshRenderer> myRenderest= new List<MeshRenderer>();
+        myRenderest = GetComponentsInChildren<MeshRenderer>().ToList();
 
-        for (int i = 0; i < taGameObjects.Count; i++)
+        List<MeshRenderer> listOfbrekables= new List<MeshRenderer>();
+
+        myClone.ListOfMsMeshRenderers.ForEach((a) =>
         {
-            if (myClone)
+            a.gameObject.AddComponent<Rigidbody>();
+            a.GetComponent<Rigidbody>().isKinematic = true;
+            a.gameObject.AddComponent<BoxCollider>();
+            a.GetComponent<BoxCollider>().enabled = false;
+            a.shadowCastingMode = ShadowCastingMode.Off;
+            a.receiveShadows = false;
+            a.material = giveMaterial;
+            a.enabled = false;
+        });
+        int index = 0;
+        myRenderest.ForEach((a) =>
+        {
+            if (a.gameObject.GetComponent<RobotPieceBreak>())
             {
-                taGameObjects[i].gameObject.GetComponent<MeshFilter>().mesh =
-                    myClone.ListOfMsMeshRenderers[i].gameObject.GetComponent<MeshFilter>().mesh;
+                a.gameObject.GetComponent<RobotPieceBreak>().piece =
+                    myClone.ListOfMsMeshRenderers.Find((b) => b.name == a.name).gameObject;
+                if (!a.gameObject.GetComponent<BoxCollider>())
+                {
+                    a.gameObject.AddComponent<BoxCollider>();
+
+                }
+
+                a.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                listOfbrekables.Add(a);
+            }
+            else
+            {
+                MiskPieceBreaker.Pieces pice = new MiskPieceBreaker.Pieces();
+                pice.original = a.gameObject;
+                pice.broken = myClone.ListOfMsMeshRenderers.Find((b) => a.gameObject.name == b.gameObject.name)
+                    .gameObject;
+                pice.brokenRend = pice.broken.GetComponent<MeshRenderer>();
+                pice.brokenColl = pice.broken.GetComponent<BoxCollider>();
+                pice.brokenRig = pice.broken.GetComponent<Rigidbody>();
+
+                // myBreaker.listOfMiskPiecesToBreak.Add(pice);
+                myBreaker.listOfMiskPiecesToBreak[index] = pice;
+                index++;
 
             }
 
-            taGameObjects[i].material = giveMaterial;
-        }
+            a.material = giveMaterial;
+        });
+
+
+       
+
+        //myClone.ShitHeadUnity();
 
 
 
 
-        for (int i = 0; i < listOfMisk.Count; i++)
-        {
-            //piece.broken = listOfMisk[i].gameObject;
-
-            //piece.original =
-            //            myClone.listOfTags.Find((a) =>
-            //            {
-            //                if (a.gameObject.name == listOfMisk[i].gameObject.name)
-            //                {
-            //                    return true;
-            //                }
-            //                else
-            //                {
-            //                    return false;
-            //                }
-            //            }).gameObject;
-            //piece.brokenColl = listOfMisk[i].gameObject.GetComponent<BoxCollider>();
-            //piece.brokenRend = listOfMisk[i].GetComponent<MeshRenderer>();
-            //piece.brokenRig = listOfMisk[i].gameObject.GetComponent<Rigidbody>();
-
-
-            //myBreaker.listOfMiskPiecesToBreak.Add(piece);
-        }
-
-        foreach (var tata in taGameObjects)
-        {
-            //tata.shadowCastingMode = ShadowCastingMode.Off;
-            //tata.receiveShadows = false;
-            //DestroyObject(tata.GetComponent<MiskTag>());
-            //if (tata != null)
-            //{
-            //    if (tata.GetComponent<Rigidbody>().isKinematic)
-            //    {
-            //        listOfMisk.Add(tata.gameObject);
-            //    }
-            //}
-
-
-            //myClone.listOfTags
-
-            //tata.enabled = true;
-            //if (tata.enabled)
-            //{
-            //   // tata.gameObject.AddComponent<RobotPieceBreak>();
-            //    tata.gameObject.GetComponent<RobotPieceBreak>().piece =
-            //        myClone.listOfTags.Find((a) =>
-            //        {
-            //            if (a.gameObject.name == tata.gameObject.name)
-            //            {
-            //                return true;
-            //            }
-            //            else
-            //            {
-            //                return false;
-            //            }
-            //        }).gameObject;
-            //}
-
-
-            // tata.gameObject.AddComponent<Rigidbody>();
-            //tata.gameObject.AddComponent<BoxCollider>();
-
-            //if (tata.gameObject.GetComponent<BoxCollider>())
-            //{
-            //   // DestroyObject(tata.gameObject.GetComponent<BoxCollider>());
-
-            //// tata.enabled = false;
-            //  tata.gameObject.AddComponent<RobotPieceBreak>();
-
-            //    tata.GetComponent<RobotPieceBreak>().piece =
-            //                    myClone.listOfTags.Find((a) =>
-            //                    {
-            //                        if (a.gameObject.name == tata.gameObject.name)
-            //                        {
-            //                            return true;
-            //                        }
-            //                        else
-            //                        {
-            //                            return false;
-            //                        }
-            //                    }).gameObject;
-
-
-            //}
-            //tata.gameObject.GetComponent<BoxCollider>().enabled = false;
-            //tata.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            //tata.enabled = false;
-        }
-
-        Debug.Break();
+        //Debug.Break();
     }
 
   
