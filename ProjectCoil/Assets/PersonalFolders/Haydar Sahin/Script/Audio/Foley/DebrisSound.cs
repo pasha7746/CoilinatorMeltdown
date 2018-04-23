@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DebrisSound : MonoBehaviour
 {
-    #region auto
     public AudioClip[] audioSounds;
-    #endregion
     public float minSoundTimer = 0.0f;
     public float maxSoundTimer = 1.0f;
     private Coroutine timerCoroutine;

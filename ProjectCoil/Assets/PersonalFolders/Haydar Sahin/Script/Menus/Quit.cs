@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Quit : MonoBehaviour
 {
     private Button button;
-    public AudioClip sound;
     private void OnEnable()
     {
         button = this.GetComponent<Button>();
@@ -18,7 +17,7 @@ public class Quit : MonoBehaviour
 
     private void QuitGame()
     {
-        Volume_Manager.volumeBoss.Play2DSfx(sound);
+        Button_Sound.buttonSound.PlayButtonSound(); ;
         Application.Quit();
     }
 }

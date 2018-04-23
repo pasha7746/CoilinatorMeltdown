@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
@@ -21,12 +22,12 @@ public class Screen_Change : MonoBehaviour
     public float offsetA;
     public float powerA;
     public float slopeA;
-    public float offsetR;
     public float fadeSpeed;
     private Coroutine fadeToBlackCoroutine;
     private Coroutine fadeToNormalCoroutine;
     public float waitTimer;
     public float waitTimerTeleportStall;
+    public event Action OnFadeToBlack;
     #endregion
     // Use this for initialization
     private void OnEnable()
@@ -43,13 +44,21 @@ public class Screen_Change : MonoBehaviour
             Debug.Log("Post Processing Behaviour is missing profile");
         }
         #endregion
-        //event listener for border
+
+        #region border
         player.OnHealthChange += VignetteRedChange;
         vignetteModel = postProcessingProfile.vignette;
         vignetteModelSettings = vignetteModel.settings;
+        #endregion
+
+        #region fade
         colorGradingModel = postProcessingProfile.colorGrading;
         colorGradingSettings = colorGradingModel.settings;
         offsetA = colorGradingSettings.colorWheels.log.offset.a;
+        powerA = colorGradingSettings.colorWheels.log.power.a;
+        slopeA = colorGradingSettings.colorWheels.log.slope.a;
+        #endregion
+        
     }
 
     #region border functions
@@ -92,7 +101,12 @@ public class Screen_Change : MonoBehaviour
             powerA = -1;
             slopeA = -1;
         }
-        yield return new WaitForSeconds(waitTimerTeleportStall);
+        yield return new WaitForSeconds(waitTimerTeleportStall/2);
+        if (OnFadeToBlack != null)
+        {
+            OnFadeToBlack();
+        }
+        yield return new WaitForSeconds(waitTimerTeleportStall / 2);
         fadeToNormalCoroutine = StartCoroutine(FadeToNormal());
     }
 
@@ -108,6 +122,7 @@ public class Screen_Change : MonoBehaviour
             colorGradingSettings.colorWheels.log.power.a = powerA;
             colorGradingSettings.colorWheels.log.slope.a = slopeA;
             colorGradingModel.settings = colorGradingSettings;
+
             yield return new WaitForSeconds(waitTimer);
         }
 

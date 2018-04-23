@@ -2408,6 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d93c75c350934eae1a67d6a9afe40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisSlider: {fileID: 114814513747796864}
 --- !u!114 &114025536938713710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2420,7 +2421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114814513747796864}
-  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
+  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
   volumeAmount: 0.2
 --- !u!114 &114056674206111240
 MonoBehaviour:
@@ -2691,7 +2692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114814513747796864}
-  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
+  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
   volumeAmount: -0.2
 --- !u!114 &114309865580233208
 MonoBehaviour:
@@ -3040,6 +3041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90d7d84a06d8964b857dc217c33094a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisSlider: {fileID: 114349553976385432}
 --- !u!114 &114539467682227764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3254,7 +3256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114349553976385432}
-  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
+  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
   volumeAmount: 0.2
 --- !u!114 &114670482487427904
 MonoBehaviour:
@@ -3268,7 +3270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114349553976385432}
-  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
+  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
   volumeAmount: -0.2
 --- !u!114 &114675841604977456
 MonoBehaviour:
@@ -3390,7 +3392,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1262756485793536}
-  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
 --- !u!114 &114735128369236272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3403,7 +3404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114675841604977456}
-  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
+  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
   volumeAmount: 0.2
 --- !u!114 &114767327564124948
 MonoBehaviour:
@@ -3417,7 +3418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 114675841604977456}
-  sound: {fileID: 8300000, guid: d07701ab0b9933b45aff61b341cd69e7, type: 3}
+  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
   volumeAmount: -0.2
 --- !u!114 &114781044775832258
 MonoBehaviour:
@@ -3542,6 +3543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc0fd8772165c942a3c2b542264ac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisSlider: {fileID: 114675841604977456}
 --- !u!114 &114814513747796864
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class Resume : MonoBehaviour
 {
     public GameObject thisMenu;
-    public AudioClip buttonClick;
-    public AudioClip resumeSound;
     public Button button;
 
     // Use this for initialization
@@ -22,11 +20,11 @@ public class Resume : MonoBehaviour
 
     public void StartGame()
     {
-        Volume_Manager.volumeBoss.Play2DSfx(buttonClick);
+        Button_Sound.buttonSound.PlayButtonSound();
         if (thisMenu != null)
         {
             thisMenu.SetActive(false);
-            Volume_Manager.volumeBoss.Play2DSfx(resumeSound);
+            Resume_Sound.resumeSound.PlayResumeSound();
         }
         
         if (thisMenu == null)
