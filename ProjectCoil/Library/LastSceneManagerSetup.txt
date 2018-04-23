@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/PersonalFolders/Haydar Sahin/UI/UITest.unity
-=======
-- path: Assets/PersonalFolders/Pasha/test.unity
->>>>>>> master
+- path: Assets/PersonalFolders/Haydar Sahin/Audio/AudioTest.unity
   isLoaded: 1
   isActive: 1
