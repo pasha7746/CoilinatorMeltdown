@@ -50,7 +50,8 @@
             </summary>
             <param name="to">Time position to reach
             (if higher than the whole tween duration the tween will simply reach its end)</param>
-            <param name="andPlay">If TRUE will play the tween after reaching the given position, otherwise it will pause it</param>
+            <param name="andPlay">If TRUE will play the tween after reaching the given position, otherwise it will 
+              it</param>
         </member>
         <member name="M:DG.Tweening.ShortcutExtensions50.DOPause(UnityEngine.Audio.AudioMixer)">
             <summary>

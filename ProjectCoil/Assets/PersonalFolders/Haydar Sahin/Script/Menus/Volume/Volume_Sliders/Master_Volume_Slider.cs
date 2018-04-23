@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class Master_Volume_Slider : MonoBehaviour
 {
-    private Slider thisSlider;
+    public Slider thisSlider;
     private void Start()
     {
-        thisSlider = GetComponentInChildren<Slider>();
         thisSlider.value = Volume_Manager.volumeBoss.masterVolume;
-        print(thisSlider.value);
     }
     public void SetMasterVolume(float volume)
     {

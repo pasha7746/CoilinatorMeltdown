@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class Sfx_Volume_Slider : MonoBehaviour
 {
-    private Slider thisSlider;
+    public Slider thisSlider;
     private void Start()
     {
-        thisSlider = GetComponentInChildren<Slider>();
         thisSlider.value = Volume_Manager.volumeBoss.sfxVolume;
     }
 
