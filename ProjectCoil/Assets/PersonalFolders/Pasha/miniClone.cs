@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class miniClone : MonoBehaviour
 {
-   public List<Transform> listOfTags= new List<Transform>();
+    public List<Transform> listOfTags= new List<Transform>();
+    public List<MeshRenderer> ListOfMsMeshRenderers= new List<MeshRenderer>();
+
 
     void Awake()
     {
-        listOfTags = GetComponentsInChildren<Transform>().ToList();
+        ListOfMsMeshRenderers = GetComponentsInChildren<MeshRenderer>().ToList();
     }
 
 
