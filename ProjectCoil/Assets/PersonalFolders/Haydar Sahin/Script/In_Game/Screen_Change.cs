@@ -16,6 +16,7 @@ public class Screen_Change : MonoBehaviour
     public PlayerHealth player;
     #endregion
 
+    public static Screen_Change screenChange;
     #region Fade
     private ColorGradingModel colorGradingModel;
     private ColorGradingModel.Settings colorGradingSettings;
@@ -28,6 +29,7 @@ public class Screen_Change : MonoBehaviour
     public float waitTimer;
     public float waitTimerTeleportStall;
     public event Action OnFadeToBlack;
+    public event Action OnTelepotFinised;
     #endregion
     // Use this for initialization
     private void OnEnable()
@@ -132,6 +134,11 @@ public class Screen_Change : MonoBehaviour
             powerA = 0;
             slopeA = 0;
         }
+
+        if (OnTelepotFinised != null)
+        {
+            OnTelepotFinised();
+        }
         yield return null;
     }
     private void FadeToBlackDisable()
@@ -169,6 +176,7 @@ public class Screen_Change : MonoBehaviour
     }
     private void OnDisable()
     {
+        player.OnHealthChange -= VignetteRedChange;
         VignetteRedChangeDisabled();
         FadeToBlackDisable();
     }
