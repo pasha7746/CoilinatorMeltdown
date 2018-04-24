@@ -18,11 +18,6 @@ public class RobotCenterHealth : BaseHealth
         OnDeath += myPoints.Score_High;
     }
 
-    // Update is called once per frame
-    void Update ()
-    {
-       
-    }
 
     public void EventPieceIsHit(float damage)
     {
@@ -34,7 +29,9 @@ public class RobotCenterHealth : BaseHealth
         robotHealth -= damage;
         if (robotHealth <= 0)
         {
+            MasterManager.myPickupManager.SpawnPickup(transform.position);
             if (OnDeath != null) OnDeath();
+            
         }
     }
 

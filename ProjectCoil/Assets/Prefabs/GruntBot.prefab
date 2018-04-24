@@ -2778,7 +2778,6 @@ GameObject:
   - component: {fileID: 114211269776037696}
   - component: {fileID: 195521226579167526}
   - component: {fileID: 114773466015214124}
-  - component: {fileID: 114110503943692878}
   - component: {fileID: 114005336534762248}
   m_Layer: 0
   m_Name: GruntBot
@@ -15538,6 +15537,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 0
   highPoints: 3000
+  decalSpawnOfset: 0
 --- !u!114 &114058051589535918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15569,20 +15569,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 0
   highPoints: 0
---- !u!114 &114110503943692878
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629743348307430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 241a923f20cf1ec478badfa53fad0980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowPoints: 0
-  medPoints: 0
-  highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114132274066513960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15597,6 +15584,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 0
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114165670340452170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15611,6 +15599,7 @@ MonoBehaviour:
   lowPoints: 50
   medPoints: 0
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114190765003286646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15625,6 +15614,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 200
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114204854458708268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15680,6 +15670,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 300
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114275506256806098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15694,6 +15685,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 200
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114277651345309210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15822,6 +15814,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 0
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114635683413653796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16108,6 +16101,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 0
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114667529183817336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16133,6 +16127,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 0
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114701421916929864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16147,6 +16142,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 0
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114773466015214124
 MonoBehaviour:
   m_ObjectHideFlags: 1

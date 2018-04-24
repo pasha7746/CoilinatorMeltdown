@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114560092582540600}
   - component: {fileID: 114540712375705650}
   - component: {fileID: 114827258472167172}
+  - component: {fileID: 114879961790806588}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -73,6 +74,9 @@ MonoBehaviour:
   heavyRocket: {fileID: 1864457733386030, guid: 59521439fe452cc459ec841ba9cb2fd5,
     type: 2}
   scoreUI: {fileID: 1631373297253510, guid: 080a72c97682cd4408bac5f984d63f72, type: 2}
+  healthPickup: {fileID: 1887830103105740, guid: c08a6c1e5d0dd7e4e89df9f34afcf070,
+    type: 2}
+  ammoPickup: {fileID: 1954567102254594, guid: 14a3d066b6a90d640892b438b33ca106, type: 2}
 --- !u!114 &114427530044688910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdf52c64630776488befa6a48e331d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 1
   lowScore:
     rate: 4
     fontSize: 80
@@ -186,3 +191,28 @@ MonoBehaviour:
   highScore:
     rate: 1
     fontSize: 200
+--- !u!114 &114879961790806588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043363697373400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbb08633ff88424dbc645e7c0c90722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health:
+    type: 2
+    Chance: 20
+    turnIncrement: 5
+    currentChance: 0
+    givenChance: 0
+    deviation: {x: 0, y: 10}
+  ammo:
+    type: 1
+    Chance: 60
+    turnIncrement: 10
+    currentChance: 0
+    givenChance: 0
+    deviation: {x: 0, y: 10}

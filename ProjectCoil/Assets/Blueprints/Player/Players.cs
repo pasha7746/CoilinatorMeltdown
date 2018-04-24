@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Players : MonoBehaviour {
+public class Players : MonoBehaviour
+{
+    public int totalAmmo;
+    public int maxAmmo;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void AddAmmo(int ammo)
+    {
+        totalAmmo += ammo;
+        if (totalAmmo > maxAmmo)
+        {
+            totalAmmo = maxAmmo;
+        }
+    }
+
+
 }

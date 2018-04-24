@@ -11,10 +11,15 @@ public class Pool : MonoBehaviour
     public GameObject enemyProjectile;
     public GameObject heavyRocket;
     public GameObject scoreUI;
+
+    [Header("Pickups")] //add extra here
+    public GameObject healthPickup;
+    public GameObject ammoPickup;
     
-    private List<GameObject> listOfBolts= new List<GameObject>();    //public for debug
+    private List<GameObject> listOfBolts= new List<GameObject>();   
     private List<GameObject> listOfMissiles= new List<GameObject>();
     private List<GameObject> listOfScoreUI= new List<GameObject>();
+    private List<GameObject> listOfPickups = new List<GameObject>();
 
     public GameObject Give_PlayerProjectile()
     {
@@ -132,5 +137,62 @@ public class Pool : MonoBehaviour
 
         }
     }
+
+    public GameObject Give_Pickup(PickupBase.PickupType pickupType)
+    {
+        if (Set_Pickup(pickupType) != null)
+        {
+            return Set_Pickup(pickupType);
+        }
+        else
+        {
+            GameObject tempPickup = null;
+            switch (pickupType) //add extra here
+            {
+                case PickupBase.PickupType.DamageBoost:
+                    break;
+                case PickupBase.PickupType.ExtraAmmo:
+                    tempPickup = Instantiate(ammoPickup);
+
+                    break;
+                case PickupBase.PickupType.HealthPickup:
+                    tempPickup = Instantiate(healthPickup);
+
+                    break;
+                case PickupBase.PickupType.RapidFirePickup:
+                    break;
+                case PickupBase.PickupType.NoneNull:
+                    return null;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("pickupType", pickupType, null);
+            }
+
+            tempPickup.GetComponent<PickupBase>().OnDisable += PutToSleep_Pickup;
+            return tempPickup;
+        }
+    }
+    public GameObject Set_Pickup(PickupBase.PickupType pickupType)
+    {
+        return listOfPickups.Find((a) => !a.activeSelf && a.GetComponent<PickupBase>().thisPickupIs==pickupType);
+    }
+
+    public void PutToSleep_Pickup(GameObject pickup)
+    {
+        pickup.SetActive(false);
+        PickupBase tempPickup = pickup.GetComponent<PickupBase>();
+
+        tempPickup.myScaleDown.Kill();
+        tempPickup.isUsed = false;
+
+
+        if (!listOfPickups.Contains(pickup))
+        {
+            listOfPickups.Add(pickup);
+
+        }
+    }
+
+
 
 }

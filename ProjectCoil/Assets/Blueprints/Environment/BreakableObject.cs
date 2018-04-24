@@ -59,6 +59,7 @@ public class BreakableObject : MonoBehaviour
     private IEnumerator DespawnTimer()
     {
         yield return new WaitForSeconds(despawnTimer);
+        MasterManager.myPickupManager.SpawnPickup(transform.position);
         Destroy(gameObject);
 
         yield return null;

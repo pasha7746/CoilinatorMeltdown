@@ -8,5 +8,6 @@ public static class MasterManager
     public static MasterSpawnController mySpawnController;
     public static ZoneManager myZoneManager;
     public static ScoreUIManager myScoreUIManager;
-    public static GameObject player;
+    public static PickupManager myPickupManager;
+    public static Players player;
 }

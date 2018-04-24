@@ -45,13 +45,7 @@ public class PlayerHealth : BaseHealth
         if (OnHealthChange != null) OnHealthChange(health);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChangeHealth(10);
-        }
-    }
+   
 
     public override void Damage(float baseDamage)
     {

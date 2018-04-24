@@ -44,6 +44,7 @@ public class Shooting : MonoBehaviour
 
     public Text debugAmmoUI;
     private Pool myPool;
+    public DebugTotalAmmoUI myTotalAmmoUi;
 
     public enum Mode
     {
@@ -79,6 +80,7 @@ public class Shooting : MonoBehaviour
         if (OnUpdateAmmoUI != null) OnUpdateAmmoUI();
 	    myPool = FindObjectOfType<Pool>();
 	    myAnimationController = GetComponentInChildren<AnimationController>();
+        myTotalAmmoUi.UpdateUI();
 	}
 
     void Update()
@@ -135,14 +137,25 @@ public class Shooting : MonoBehaviour
 
     public void DebugUI()
     {
-        debugAmmoUI.text = ammo + " / " + maxAmmo;
+        debugAmmoUI.text = "Ammo: "  + ammo;
     }
 
     public void Reload()
     {
         if(ammo==maxAmmo) return;
         if(myAnimationController.isReloading) return;
+        if(MasterManager.player.totalAmmo<=0) return;
+        MasterManager.player.totalAmmo += (ammo - maxAmmo);
         ammo = maxAmmo;
+
+        if (MasterManager.player.totalAmmo < 0)
+        {
+            ammo += MasterManager.player.totalAmmo;
+            MasterManager.player.totalAmmo = 0;
+        }
+        
+
+        myTotalAmmoUi.UpdateUI();
         if (OnReload != null) OnReload();
         if (OnUpdateAmmoUI != null) OnUpdateAmmoUI();
         myAnimationController.Play(AnimationController.State.Reload);

@@ -10,12 +10,12 @@ public class Manager : MonoBehaviour
         MasterManager.mySpawnController = GetComponent<MasterSpawnController>();
         MasterManager.myZoneManager = GetComponent<ZoneManager>();
         MasterManager.myScoreUIManager = GetComponent<ScoreUIManager>();
-        
+        MasterManager.myPickupManager = GetComponent<PickupManager>();
     }
 
     void Start()
     {
-        MasterManager.player = FindObjectOfType<Players>().gameObject;
+        MasterManager.player = FindObjectOfType<Players>();
     }
 
 }

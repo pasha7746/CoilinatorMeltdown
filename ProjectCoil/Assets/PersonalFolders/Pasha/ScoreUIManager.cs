@@ -20,6 +20,8 @@ public class ScoreUIManager : MonoBehaviour
     public void Score_Low(int score, Vector3 pos)
     {
         GameObject scorePrefab=  MasterManager.myPool.Give_ScoreUI();
+       
+
         ScoreUI tempUI = scorePrefab.GetComponent<ScoreUI>();
 
         tempUI.fontSize = lowScore.fontSize;
