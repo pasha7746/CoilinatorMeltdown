@@ -1390,7 +1390,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605606424614368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9005616, y: 1.84, z: 4.084737}
+  m_LocalPosition: {x: 27.201015, y: 2.856, z: -1.4504948}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4783490786145950}
@@ -4848,6 +4848,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 100
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114082375885028538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4873,6 +4874,7 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 50
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114180970159900846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4887,6 +4889,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 100
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114185136612095070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4934,24 +4937,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayers: {fileID: 0}
   gunList:
-  - gunModel: {fileID: 0}
+  - gunModel: {fileID: 1019000532075112}
     projectileModel: {fileID: 1666364352616400, guid: f00f1009df2708f4e885ccfc37e1dcdc,
       type: 2}
     fireRateRange: {x: 0.1, y: 1}
     projectileSpeed: 400
     shotsInBurst: {x: 0, y: 3}
-    barrelEnding: {fileID: 0}
+    barrelEnding: {fileID: 4955153840471398}
     accuracy: 0.588
     maxAmmo: 1
     projectileLifetime: 5
     baseDamage: 5
-  - gunModel: {fileID: 0}
+  - gunModel: {fileID: 1523024044235556}
     projectileModel: {fileID: 1666364352616400, guid: f00f1009df2708f4e885ccfc37e1dcdc,
       type: 2}
     fireRateRange: {x: 0.1, y: 1}
     projectileSpeed: 400
     shotsInBurst: {x: 0, y: 3}
-    barrelEnding: {fileID: 0}
+    barrelEnding: {fileID: 4367680131137944}
     accuracy: 0.659
     maxAmmo: 1
     projectileLifetime: 5
@@ -4972,6 +4975,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 50
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114305552251414554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4986,6 +4990,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 50
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114361473459156026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5000,6 +5005,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 200
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114412223248258682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5111,6 +5117,7 @@ MonoBehaviour:
   lowPoints: 0
   medPoints: 0
   highPoints: 500
+  decalSpawnOfset: 0
 --- !u!114 &114700735869430992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5199,6 +5206,7 @@ MonoBehaviour:
   lowPoints: 20
   medPoints: 0
   highPoints: 0
+  decalSpawnOfset: 0
 --- !u!114 &114899872480041482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5213,3 +5221,4 @@ MonoBehaviour:
   lowPoints: 10
   medPoints: 50
   highPoints: 0
+  decalSpawnOfset: 0

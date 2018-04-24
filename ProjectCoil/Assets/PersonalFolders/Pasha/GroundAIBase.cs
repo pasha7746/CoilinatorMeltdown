@@ -12,7 +12,7 @@ public class GroundAIBase : MonoBehaviour
     void Awake()
     {
         myAgent = GetComponent<NavMeshAgent>();
-        myZoneManager = masterManager.myZoneManager;
+        myZoneManager = MasterManager.myZoneManager;
     }
 
     // Use this for initialization

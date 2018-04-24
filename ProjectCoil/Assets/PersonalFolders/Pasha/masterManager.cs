@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class masterManager 
+public static class MasterManager 
 {
     public static Pool myPool;
     public static MasterSpawnController mySpawnController;
     public static ZoneManager myZoneManager;
-
+    public static ScoreUIManager myScoreUIManager;
+    public static GameObject player;
 }

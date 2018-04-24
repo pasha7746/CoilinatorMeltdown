@@ -41,13 +41,13 @@ public class HeavyAI : GroundAIBase
     public void PositionToShoot()
     {
        if(!isRetreatComplete) return;
-        Zone tempZone=  myZoneManager.Open.Find((a) => a.linkedBarricade_1 == masterManager.mySpawnController.currentBarricadeIndex);
+        Zone tempZone=  myZoneManager.Open.Find((a) => a.linkedBarricade_1 == MasterManager.mySpawnController.currentBarricadeIndex);
         if (tempZone == null)
         {
-            tempZone = myZoneManager.Open.Find((a) => a.linkedBarricade_2 == masterManager.mySpawnController.currentBarricadeIndex);
+            tempZone = myZoneManager.Open.Find((a) => a.linkedBarricade_2 == MasterManager.mySpawnController.currentBarricadeIndex);
             if (tempZone == null)
             {
-                tempZone = myZoneManager.Open.Find((a) => a.linkedBarricade_3 == masterManager.mySpawnController.currentBarricadeIndex);
+                tempZone = myZoneManager.Open.Find((a) => a.linkedBarricade_3 == MasterManager.mySpawnController.currentBarricadeIndex);
 
             }
         }
@@ -127,13 +127,13 @@ public class HeavyAI : GroundAIBase
     public void Retreat()
     {
         isRetreatComplete = false;
-        Zone tempZone = myZoneManager.Safe.Find((a) => a.linkedBarricade_1 == masterManager.mySpawnController.currentBarricadeIndex);
+        Zone tempZone = myZoneManager.Safe.Find((a) => a.linkedBarricade_1 == MasterManager.mySpawnController.currentBarricadeIndex);
         if (tempZone == null)
         {
-            tempZone = myZoneManager.Safe.Find((a) => a.linkedBarricade_2 == masterManager.mySpawnController.currentBarricadeIndex);
+            tempZone = myZoneManager.Safe.Find((a) => a.linkedBarricade_2 == MasterManager.mySpawnController.currentBarricadeIndex);
             if (tempZone == null)
             {
-                tempZone = myZoneManager.Safe.Find((a) => a.linkedBarricade_3 == masterManager.mySpawnController.currentBarricadeIndex);
+                tempZone = myZoneManager.Safe.Find((a) => a.linkedBarricade_3 == MasterManager.mySpawnController.currentBarricadeIndex);
 
             }
         }

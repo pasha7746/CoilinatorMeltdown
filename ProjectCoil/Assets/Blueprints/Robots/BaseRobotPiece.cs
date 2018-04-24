@@ -22,6 +22,7 @@ public class BaseRobotPiece : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<Projectile>()) return;
+        other.gameObject.GetComponent<Projectile>().DespawnProjectile();
         CalculateDamageDealt(other.gameObject.GetComponent<Projectile>().baseDamage);
     }
 

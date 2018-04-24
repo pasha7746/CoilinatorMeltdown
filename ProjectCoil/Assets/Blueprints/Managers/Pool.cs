@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Pool : MonoBehaviour
@@ -9,10 +10,11 @@ public class Pool : MonoBehaviour
     public GameObject playerBolt;
     public GameObject enemyProjectile;
     public GameObject heavyRocket;
+    public GameObject scoreUI;
     
     private List<GameObject> listOfBolts= new List<GameObject>();    //public for debug
     private List<GameObject> listOfMissiles= new List<GameObject>();
-    
+    private List<GameObject> listOfScoreUI= new List<GameObject>();
 
     public GameObject Give_PlayerProjectile()
     {
@@ -96,5 +98,39 @@ public class Pool : MonoBehaviour
         }
     }
 
+    public GameObject Give_ScoreUI()
+    {
+        if (Set_ScoreUI() != null)
+        {
+            return Set_ScoreUI();
+        }
+        else
+        {
+            GameObject scoreUITemp = Instantiate(scoreUI);
+            scoreUITemp.GetComponent<ScoreUI>().OnHidden += PutToSleep_ScoreUI;
+            return scoreUITemp;
+        }
+    }
+
+    public GameObject Set_ScoreUI()
+    {
+        return listOfScoreUI.Find((a) => !a.activeSelf);
+    }
+
+    public void PutToSleep_ScoreUI(GameObject scoreInstance)
+    {
+        scoreInstance.SetActive(false);
+        ScoreUI tempScoreUI = scoreInstance.GetComponent<ScoreUI>();
+
+        tempScoreUI.fadeTween.Kill();
+        tempScoreUI.moveTween.Kill();
+
+
+        if (!listOfScoreUI.Contains(scoreInstance))
+        {
+            listOfScoreUI.Add(scoreInstance);
+
+        }
+    }
 
 }

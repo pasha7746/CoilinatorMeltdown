@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114427530044688910}
   - component: {fileID: 114560092582540600}
   - component: {fileID: 114540712375705650}
-  - component: {fileID: 114932676906781960}
+  - component: {fileID: 114827258472167172}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -72,6 +72,7 @@ MonoBehaviour:
     type: 2}
   heavyRocket: {fileID: 1864457733386030, guid: 59521439fe452cc459ec841ba9cb2fd5,
     type: 2}
+  scoreUI: {fileID: 1631373297253510, guid: 080a72c97682cd4408bac5f984d63f72, type: 2}
 --- !u!114 &114427530044688910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,7 +166,7 @@ MonoBehaviour:
   LongDistance: []
   Close: []
   ExactPoint: []
---- !u!114 &114932676906781960
+--- !u!114 &114827258472167172
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -173,6 +174,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043363697373400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85def75c512968e4d9645ac25729ae87, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fdf52c64630776488befa6a48e331d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowScore:
+    rate: 4
+    fontSize: 80
+  medScore:
+    rate: 3
+    fontSize: 120
+  highScore:
+    rate: 1
+    fontSize: 200
