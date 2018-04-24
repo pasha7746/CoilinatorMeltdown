@@ -11,20 +11,38 @@ public class Teleport : MonoBehaviour
 
     private void OnEnable()
     {
-        throw new System.NotImplementedException();
+        Screen_Change.screenChange.OnFadeToBlack += DoTeleport;
+        masterManager.mySpawnController.OnBarricadeComplete += ICanBeHit;
+    }
+
+    private void ICanBeHit()
+    {
+        gameObject.SetActive(true);
+    }
+
+    private void DoTeleport()
+    {
+        if (canTeleport)
+        {
+            player.transform.position = teleportObject.transform.position;
+            player.transform.rotation = teleportObject.transform.rotation;
+            canTeleport = false;
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<DebrisColisionTest>() != null)
+        if (other.GetComponent<Projectile>() != null)
         {
-            if (canTeleport)
-            {
-                player.transform.position = teleportObject.transform.position;
-                player.transform.rotation = teleportObject.transform.rotation;
-                canTeleport = false;
-            }
+            Screen_Change.screenChange.FadeToBlack();
+            canTeleport = true;
         }
-        
+    }
+
+    private void OnDisable()
+    {
+        Screen_Change.screenChange.OnFadeToBlack -= DoTeleport;
+        masterManager.mySpawnController.OnBarricadeComplete -= ICanBeHit;
     }
 }

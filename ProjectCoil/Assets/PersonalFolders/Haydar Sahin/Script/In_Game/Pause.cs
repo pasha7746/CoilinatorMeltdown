@@ -6,24 +6,15 @@ public class Pause : MonoBehaviour
 {
     public GameObject UIRig;
     public GameObject gameRig;
-
     public Pause_Menu pauseMenu;
-    
+
+    public static Pause pause;
 	// Use this for initialization
 	void Start ()
 	{
 	    Time.timeScale = 1;
 	    gameRig.SetActive(true);
 	    UIRig.SetActive(false);
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	    if (Input.GetKeyDown(KeyCode.Space))
-	    {
-            PauseGame();
-	    }
 	}
 
     public void PauseGame()
