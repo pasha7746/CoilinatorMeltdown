@@ -12,7 +12,7 @@ public class Teleport : MonoBehaviour
     private void OnEnable()
     {
         Screen_Change.screenChange.OnFadeToBlack += DoTeleport;
-        masterManager.mySpawnController.OnBarricadeComplete += ICanBeHit;
+        MasterManager.mySpawnController.OnBarricadeComplete += ICanBeHit;
     }
 
     private void ICanBeHit()
@@ -43,6 +43,6 @@ public class Teleport : MonoBehaviour
     private void OnDisable()
     {
         Screen_Change.screenChange.OnFadeToBlack -= DoTeleport;
-        masterManager.mySpawnController.OnBarricadeComplete -= ICanBeHit;
+        MasterManager.mySpawnController.OnBarricadeComplete -= ICanBeHit;
     }
 }

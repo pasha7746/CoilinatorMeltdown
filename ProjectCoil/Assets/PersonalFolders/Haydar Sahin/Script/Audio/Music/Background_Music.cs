@@ -16,7 +16,7 @@ public class Background_Music : MonoBehaviour
 
     private void OnEnable()
     {
-        masterManager.mySpawnController.OnBarricadeComplete += Relax;
+        MasterManager.mySpawnController.OnBarricadeComplete += Relax;
         Screen_Change.screenChange.OnTelepotFinised += BattleMusic;
     }
 
@@ -32,7 +32,7 @@ public class Background_Music : MonoBehaviour
 
     private void OnDisable()
     {
-        masterManager.mySpawnController.OnBarricadeComplete -= Relax;
+        MasterManager.mySpawnController.OnBarricadeComplete -= Relax;
         Screen_Change.screenChange.OnTelepotFinised -= BattleMusic;
     }
 }
