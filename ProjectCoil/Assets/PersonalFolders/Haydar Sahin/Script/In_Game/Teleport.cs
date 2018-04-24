@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
+    public GameObject teleportObject;
+    public bool canTeleport;
+    
+    public GameObject player;
 
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
+    private void OnEnable()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<DebrisColisionTest>() != null)
+        {
+            if (canTeleport)
+            {
+                player.transform.position = teleportObject.transform.position;
+                player.transform.rotation = teleportObject.transform.rotation;
+                canTeleport = false;
+            }
+        }
+        
+    }
 }

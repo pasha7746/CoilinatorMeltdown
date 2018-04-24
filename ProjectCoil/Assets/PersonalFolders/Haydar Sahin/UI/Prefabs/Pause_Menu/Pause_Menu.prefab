@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 224099987876292344}
   - component: {fileID: 222868501352871904}
   - component: {fileID: 114708745029886634}
-  - component: {fileID: 114347550563928476}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -232,7 +231,6 @@ GameObject:
   - component: {fileID: 224046695361386104}
   - component: {fileID: 222502463852419960}
   - component: {fileID: 114299231521132836}
-  - component: {fileID: 114847314861612896}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -250,7 +248,6 @@ GameObject:
   - component: {fileID: 224090954668672522}
   - component: {fileID: 222793550882050542}
   - component: {fileID: 114072193249151532}
-  - component: {fileID: 114995409015776904}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -290,6 +287,7 @@ GameObject:
   - component: {fileID: 223405196803610154}
   - component: {fileID: 114156702840095594}
   - component: {fileID: 114543785212941416}
+  - component: {fileID: 114387906637165090}
   m_Layer: 5
   m_Name: Pause_Menu
   m_TagString: Untagged
@@ -356,7 +354,6 @@ GameObject:
   - component: {fileID: 224988233490917740}
   - component: {fileID: 222214563370172932}
   - component: {fileID: 114599706943151078}
-  - component: {fileID: 114230179011189994}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -936,17 +933,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114230179011189994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1799002181916306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc0fd8772165c942a3c2b542264ac19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114251394682343368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -958,7 +944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d15cec6d0ef44e4f82574d9abead01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
   levelName: 
 --- !u!114 &114299231521132836
 MonoBehaviour:
@@ -1006,18 +991,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextMenu: {fileID: 0}
   thisMenu: {fileID: 1654100793975412}
-  sound: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
---- !u!114 &114347550563928476
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259895100490336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc0fd8772165c942a3c2b542264ac19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114370933716620550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1027,6 +1000,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c08986413770457419ad6914ab42b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114387906637165090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1654100793975412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64cee31752d69848a13808cb3e68006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114395074836039902
@@ -1426,9 +1410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisMenu: {fileID: 1654100793975412}
-  buttonClick: {fileID: 8300000, guid: b0537e25e4760b64ba9f9f2c60cfbf94, type: 3}
-  resumeSound: {fileID: 8300000, guid: 7c80287e663fe004f8a3dd3ba4ffd1ec, type: 3}
   button: {fileID: 114476613752511726}
+  UIRig: {fileID: 0}
+  gameRig: {fileID: 0}
 --- !u!114 &114799331925819154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1470,17 +1454,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114847314861612896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1572334464851142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc0fd8772165c942a3c2b542264ac19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114848997014677808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1518,17 +1491,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114995409015776904
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1609485090254254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc0fd8772165c942a3c2b542264ac19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &222015161995990540
 CanvasRenderer:
   m_ObjectHideFlags: 1
