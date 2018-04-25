@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Levels/MainMenu/MainMenu.unity
+    guid: 7d3031c9fe4160144be3d8e48402c6c2
+  - enabled: 1
+    path: Assets/Levels/Turorial Level/Turorial.unity
+    guid: 55c75692e65c63a4d9b97b5cf406818f
+  - enabled: 1
+    path: Assets/Demo V0.3/MainLevel.unity
+    guid: 8d20085788348a8478042bfc2ac5e323

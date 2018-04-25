@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PersonalFolders/Pasha/test.unity
+- path: Assets/Levels/Turorial Level/Turorial.unity
   isLoaded: 1
   isActive: 1

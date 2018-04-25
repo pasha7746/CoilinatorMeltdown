@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 23005389558740598}
   - component: {fileID: 33580016069815520}
   - component: {fileID: 114436121880996684}
-  - component: {fileID: 114908583525005110}
   m_Layer: 0
   m_Name: '[CameraRig] (UI)'
   m_TagString: Untagged
@@ -202,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896770785556600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 464.5109, y: 116.269, z: 157}
+  m_LocalPosition: {x: 0, y: 0.135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4832517528782542}
@@ -457,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d59857df9c3e0479a7c1b659fa2663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 114908583525005110}
+  player: {fileID: 0}
   offsetA: 0
   powerA: 0
   slopeA: 0
@@ -598,21 +597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149b7dfeade1cc74ea22f3ea03760d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114908583525005110
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1896770785556600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e33a82be5ec474e9f9bd75a578ba16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 100
-  healthRegenerates: 0
-  regenerationRate: 0
 --- !u!114 &114940184949930186
 MonoBehaviour:
   m_ObjectHideFlags: 1

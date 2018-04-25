@@ -517,6 +517,8 @@ GameObject:
   - component: {fileID: 20482955751044854}
   - component: {fileID: 114597211079020542}
   - component: {fileID: 92598098867111622}
+  - component: {fileID: 114955690202159742}
+  - component: {fileID: 114287795875675224}
   m_Layer: 0
   m_Name: Camera (head)
   m_TagString: MainCamera
@@ -2126,7 +2128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1949278360935008
 GameObject:
   m_ObjectHideFlags: 1
@@ -2932,7 +2934,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882479982356378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.55, y: 0.58, z: -8.48}
+  m_LocalPosition: {x: 0, y: 0.103, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4973058877118896}
@@ -6087,6 +6089,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   assignAllBeforeIdentified: 0
+--- !u!114 &114287795875675224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225593700546920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 032e6c005d0e2504a8d43576a215943a, type: 2}
 --- !u!114 &114318490733590214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6559,6 +6573,24 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 200
+--- !u!114 &114955690202159742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225593700546920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d59857df9c3e0479a7c1b659fa2663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 114800886605577038}
+  offsetA: 0
+  powerA: 0
+  slopeA: 0
+  fadeSpeed: 0.05
+  waitTimer: 0.05
+  waitTimerTeleportStall: 1
 --- !u!114 &114958388279686904
 MonoBehaviour:
   m_ObjectHideFlags: 1

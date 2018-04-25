@@ -15,7 +15,7 @@ public class DebugTotalAmmoUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        myText.text = MasterManager.player.maxAmmo + " / " + MasterManager.player.totalAmmo;
+        if (myText != null) myText.text = MasterManager.player.maxAmmo + " / " + MasterManager.player.totalAmmo;
     }
 
 }
