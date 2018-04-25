@@ -31,6 +31,8 @@ public class ScoreUI : MonoBehaviour
 
         fontSize = (int) (fontSize * ((Mathf.Log10(Vector3.Distance(MasterManager.player.transform.position, transform.position)) *
                                        MasterManager.myScoreUIManager.referenceDistance)));
+
+        transform.rotation = MasterManager.myAnchor.transform.rotation;
         myText.text = score.ToString();
         myText.fontSize = fontSize;
         Color tempColour = myText.color;

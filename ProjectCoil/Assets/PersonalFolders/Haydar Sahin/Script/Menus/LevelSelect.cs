@@ -24,6 +24,16 @@ public class LevelSelect : MonoBehaviour
         Button_Sound.buttonSound.PlayButtonSound();
         if (levelName != null || levelName != " ")
         {
+            if (levelName == GameState.mainLevelName)
+            {
+                GameState.isInGame = true;
+                ScoreManager.gameScore = 0;
+            }
+            else
+            {
+                GameState.isInGame = false;
+            }
+
             SceneManager.LoadScene(levelName);
         }
         else

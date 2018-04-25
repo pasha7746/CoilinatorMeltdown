@@ -52,7 +52,7 @@ public class MasterSpawnController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		
+		MasterManager.myScreenChanger.OnTelepotFinised+=
 	}
 	
 	// Update is called once per frame

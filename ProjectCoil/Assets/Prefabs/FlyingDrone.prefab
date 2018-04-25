@@ -701,6 +701,7 @@ GameObject:
   - component: {fileID: 114502282168591664}
   - component: {fileID: 114898373557886104}
   - component: {fileID: 114686212965979208}
+  - component: {fileID: 114887963476185852}
   m_Layer: 0
   m_Name: FlyingDrone
   m_TagString: Untagged
@@ -1390,7 +1391,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605606424614368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.201015, y: 2.856, z: -1.4504948}
+  m_LocalPosition: {x: -2.48, y: 2.34, z: 2.771843}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4783490786145950}
@@ -5166,6 +5167,18 @@ MonoBehaviour:
   droidHoverLenghtRange: {x: 1, y: 3}
   moveLocked: 0
   flightBehavior: 0
+--- !u!114 &114887963476185852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605606424614368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ccb04adc0c4c14fbd978e0ed9d8ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfMiskPiecesToBreak: []
 --- !u!114 &114896445748500764
 MonoBehaviour:
   m_ObjectHideFlags: 1

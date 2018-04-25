@@ -9,6 +9,10 @@ public class Resume : MonoBehaviour
     public Button button;
     public GameObject UIRig;
     public GameObject gameRig;
+
+    public List<GameObject> listOFOtherObjects; //any ther ojects
+
+
     // Use this for initialization
     public virtual void OnEnable()
     {
@@ -29,8 +33,9 @@ public class Resume : MonoBehaviour
         {
             Time.timeScale = 1;
             gameRig.SetActive(true);
-            Pause.pause.isPaused = false;
+            MasterManager.myPause.isPaused = false;
             UIRig.SetActive(false);
+            listOFOtherObjects.ForEach((a)=>a.SetActive(false));
             thisMenu.SetActive(false);
             Resume_Sound.resumeSound.PlayResumeSound();
         }

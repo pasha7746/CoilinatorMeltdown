@@ -10,4 +10,7 @@ public static class MasterManager
     public static ScoreUIManager myScoreUIManager;
     public static PickupManager myPickupManager;
     public static Players player;
+    public static Pause myPause;
+    public static PauseMenuAnchor myAnchor;
+    public static Screen_Change myScreenChanger;
 }

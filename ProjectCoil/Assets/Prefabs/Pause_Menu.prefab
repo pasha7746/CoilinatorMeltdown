@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 223231766757378068}
   - component: {fileID: 114790804466135650}
   - component: {fileID: 114887079512841584}
+  - component: {fileID: 114568207879319674}
   m_Layer: 5
   m_Name: Pause_Menu
   m_TagString: Untagged
@@ -1180,6 +1181,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0000
+--- !u!114 &114568207879319674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484115054718014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf745b9d8657c642a4c39d2ba26de90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScoreUI: {fileID: 114549186130434316}
+  myHighScoreUI: {fileID: 114560959286181278}
 --- !u!114 &114593547848663648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1247,6 +1261,8 @@ MonoBehaviour:
   button: {fileID: 114276920605410512}
   UIRig: {fileID: 0}
   gameRig: {fileID: 0}
+  listOFOtherObjects:
+  - {fileID: 0}
 --- !u!114 &114704637066424950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1803,7 +1819,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484115054718014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.8613884, y: 0.049999952, z: -1.8759286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224119312433700180}
@@ -1812,6 +1828,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2.8613884, y: 0.049999908}
   m_SizeDelta: {x: 3.85, y: 4.43}
   m_Pivot: {x: 0.5, y: 0.5}

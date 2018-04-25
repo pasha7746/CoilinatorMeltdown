@@ -7,21 +7,31 @@ public class Pause : MonoBehaviour
     public GameObject UIRig;
     public GameObject gameRig;
     public GameObject pauseMenu;
-    public static Pause pause;
+
+    private PauseMenuAnchor myAnchor;
+   // public static Pause pause;
     public bool isPaused;
     public float pasueMenuSpawnDistance;
+    private bool noPauseMenu;
 
 	// Use this for initialization
 	void Start ()
 	{
 	    isPaused = false;
 	    Time.timeScale = 1;
+	    if (gameRig == null)
+	    {
+            print("No pause menu prefab");
+            return;
+	    }
 	    gameRig.SetActive(true);
 	    UIRig.SetActive(false);
+	    myAnchor = MasterManager.player.GetComponentInChildren<PauseMenuAnchor>();
 	}
 
     private void Update()
     {
+        
         if (Input.GetButtonDown("MenuRight"))
         {
             PauseGame();
@@ -36,14 +46,13 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
+       if(!gameRig) return;
         if (isPaused == false)
         {
             isPaused = true;
             gameRig.SetActive(false);
-            SteamVR_Camera vrCamTemp = UIRig.GetComponentInChildren<SteamVR_Camera>();  //this thing has some trouble getting the direction right
-
-            StartCoroutine(LateUpdateOneFrame(vrCamTemp.transform.position + (vrCamTemp.transform.forward * pasueMenuSpawnDistance)));
-                
+            pauseMenu.transform.position = myAnchor.transform.position;
+            pauseMenu.transform.rotation = myAnchor.transform.rotation;   
             //pauseMenu.transform.LookAt(vrCamTemp.transform.position);
             
             UIRig.SetActive(true);
@@ -60,12 +69,5 @@ public class Pause : MonoBehaviour
         }
     }
 
-    public IEnumerator LateUpdateOneFrame(Vector3 pos)
-    {
-        yield return new WaitForFixedUpdate();
-        
-        pauseMenu.transform.position = pos;
-
-        yield return null;
-    }
+   
 }

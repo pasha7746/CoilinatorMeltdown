@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public static class ScoreManager
@@ -14,11 +16,31 @@ public static class ScoreManager
         gameScore += score;
     }
 
-    //public static void ScoreUI(int points, Vector3 pos)
-    //{
-    //    if (OnSpawnDecal != null) OnSpawnDecal(points, pos);
-    //}
-
-
+    public static void RunHighScoreCheck()
+    {
+        if (gameScore > highScore)
+        {
+            highScore = gameScore;
+            SaveScore();
+        }
+    }
+    public static void SaveScore()
+    {
+        
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/saveFile.sv");
+        bf.Serialize(file, highScore);
+        file.Close();
+    }
+    public static void LoadScore()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveFile.sv"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveFile.sv", FileMode.Open);
+            highScore = (int)bf.Deserialize(file);
+            file.Close();
+        }
+    }
 
 }

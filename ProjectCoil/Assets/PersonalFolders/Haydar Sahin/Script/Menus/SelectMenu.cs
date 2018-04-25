@@ -26,6 +26,7 @@ public class SelectMenu : MonoBehaviour
         if (nextMenu != null && thisMenu != null)
         {
             nextMenu.SetActive(true);
+            nextMenu.transform.position = thisMenu.transform.position;
             thisMenu.SetActive(false);
         }
 

@@ -32,6 +32,13 @@ public class Screen_Change : MonoBehaviour
     public event Action OnTelepotFinised;
     #endregion
     // Use this for initialization
+
+    void Awake()
+    {
+        player = GetComponentInParent<PlayerHealth>();
+    }
+
+
     private void OnEnable()
     {
         #region gets Prossesser

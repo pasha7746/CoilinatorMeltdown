@@ -228,6 +228,7 @@ MonoBehaviour:
   thisPickupIs: 1
   isUsed: 0
   myEase: 19
+  lifeTime: 10
   ammoToGive: 20
   deviation: {x: -5, y: 20}
 --- !u!114 &114680861973989206

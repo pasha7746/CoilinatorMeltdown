@@ -18,6 +18,8 @@ public class PickupBase : MonoBehaviour
     public PickupType thisPickupIs;
     public bool isUsed;
     public Ease myEase;
+    public float lifeTime;
+    public Coroutine lifeCoroutine;
 
     void OnEnable()
     {
@@ -27,7 +29,14 @@ public class PickupBase : MonoBehaviour
     public virtual void CustomStart()
     {
         OnPickupHit += OnHit;
+        StartCoroutine(LifeTime());
+    }
 
+    public IEnumerator LifeTime()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        OnHit();
+        yield return null;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,12 +53,13 @@ public class PickupBase : MonoBehaviour
         {
             myScaleUp.Kill();
         }
-
+        StopAllCoroutines();
         myScaleDown= transform.DOScale(Vector3.zero, 2f).SetEase(myEase).OnComplete(Despawn);
     }
 
     public void Despawn()
     {
+
         if (OnDisable != null) OnDisable(gameObject);
 
     }

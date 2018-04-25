@@ -239,6 +239,7 @@ MonoBehaviour:
   thisPickupIs: 2
   isUsed: 0
   myEase: 19
+  lifeTime: 10
   healthToGive: 20
   deviation: {x: -5, y: 30}
 --- !u!114 &114768016450048202
