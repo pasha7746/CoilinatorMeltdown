@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Levels/Turorial Level/Turorial.unity
+- path: Assets/Levels/MainMenu/MainMenu.unity
   isLoaded: 1
   isActive: 1
